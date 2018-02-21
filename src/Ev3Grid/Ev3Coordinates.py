@@ -17,7 +17,7 @@ class Ev3Coordinates:
     #Initializer
     def __init__(self, targetx : int, targety : int, *targetproperties: str):
         # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+        # TODO: Optional: Add more docstring tests
         # TODO: Create Unittests
 
         """
@@ -246,10 +246,20 @@ class Ev3Coordinates:
 
     def __str__(self) -> str :
         # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+        # TODO: Optional: Add more docstring tests
         # TODO: Create Unittests
         """
         String Representation of Ev3Coordinate object
+
+        >>> a = Ev3Coordinates(5,6)
+        >>> print(a)
+        (5,6)
+        >>> b = Ev3Coordinates(-6, -4)
+        >>> print(b)
+        (-6,-4)
+        >>> c = Ev3Coordinates(7, -9)
+        >>> print(c)
+        (7,-9)
 
         :return:
         :rtype:
