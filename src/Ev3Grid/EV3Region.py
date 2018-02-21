@@ -25,7 +25,7 @@ class EV3Region:
         self.yMax = self.xMin + targetregionsize
         self.regionCoordinates.append(targetcoordinates)
 
-    def checkifinregion(self, target: Ev3Coordinates) -> bool:
+    def ifcoordin(self, target: Ev3Coordinates) -> bool:
         """
 
         Check to see if the target coordinates in questionare in this region.
@@ -39,4 +39,6 @@ class EV3Region:
             return True
         else:
             return False
+
+
 
