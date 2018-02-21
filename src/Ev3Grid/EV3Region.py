@@ -5,10 +5,10 @@ class EV3Region:
     A section/region of the world grid. Storing specific
     """
 
-    xMax: int
-    xMin: int
-    yMax: int
-    yMin: int
+    __xMax: int
+    __xMin: int
+    __yMax: int
+    __yMin: int
 
     regionCoordinates: list
 
@@ -19,10 +19,10 @@ class EV3Region:
         :param targetcoordinates:
         :type targetcoordinates:
         """
-        self.xMin = (targetcoordinates.get_xcoordinate() // targetregionsize) * targetregionsize
-        self.xMax = self.xMin + targetregionsize
-        self.yMin = (targetcoordinates.get_ycoordinate() // targetregionsize) * targetregionsize
-        self.yMax = self.xMin + targetregionsize
+        self.__xMin = (targetcoordinates.get_xcoordinate() // targetregionsize) * targetregionsize
+        self.__xMax = self.__xMin + targetregionsize
+        self.__yMin = (targetcoordinates.get_ycoordinate() // targetregionsize) * targetregionsize
+        self.__yMax = self.__xMin + targetregionsize
         self.regionCoordinates.append(targetcoordinates)
 
     def ifcoordin(self, target: Ev3Coordinates) -> bool:
