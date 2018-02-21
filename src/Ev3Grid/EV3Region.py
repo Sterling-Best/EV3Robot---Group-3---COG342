@@ -16,8 +16,8 @@ class EV3Region:
         """
         Initiates a Region with a first coordinate.
 
-        :param targetCoordinates:
-        :type targetCoordinates:
+        :param targetcoordinates:
+        :type targetcoordinates:
         """
         self.xMin = (targetcoordinates.get_xcoordinate() // targetregionsize) * targetregionsize
         self.xMax = self.xMin + targetregionsize
@@ -25,4 +25,18 @@ class EV3Region:
         self.yMax = self.xMin + targetregionsize
         self.regionCoordinates.append(targetcoordinates)
 
-    def coordinatesInRegion(self, targets):
+    def checkifinregion(self, target: Ev3Coordinates) -> bool:
+        """
+
+        Check to see if the target coordinates in questionare in this region.
+
+        :param target:
+        :type target:
+        :return:
+        :rtype:
+        """
+        if target in self.regionCoordinates:
+            return True
+        else:
+            return False
+
