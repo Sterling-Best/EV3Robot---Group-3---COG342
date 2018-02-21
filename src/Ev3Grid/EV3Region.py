@@ -44,7 +44,7 @@ class EV3Region:
         """
 
         Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
-        found, the method will return false. 
+        found, the method will return false.
 
         Note: The reverse is not true, in that not all Ev3Coordinates in a region need to be in the list.
 
@@ -58,6 +58,28 @@ class EV3Region:
             if targetcoord not in self.regionCoordinates:
                 return False
         return True
+
+    def addcoord(self, targetcoord: Ev3Coordinates):
+        """
+        Adds an Ev3Coordinates object to regionCoordinates list. Organizes the coordinate to fit in X, Y, Z organizational structure.
+
+        :param targetcoord:
+        :type targetcoord:
+        :return:
+        :rtype:
+        """
+        if self.regionCoordinates is not None or not self.regionCoordinates:
+            for rc in self.regionCoordinates:
+                if rc == targetcoord:
+                    break
+                elif rc < targetcoord:
+                    self.regionCoordinates.insert(self.regionCoordinates.index(rc), targetcoord)
+
+
+
+
+
+
 
 
 

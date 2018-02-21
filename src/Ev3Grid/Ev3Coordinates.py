@@ -5,10 +5,10 @@ class Ev3Coordinates:
 
     #Declares Class Variables
     #Coordinates
-    xCoordinate: int
-    yCoordinate: int
+    __xCoordinate: int
+    __yCoordinate: int
     #Property List
-    propertyList: list
+    __propertyList: list
 
     #Initializer
     def __init__(self, targetx : int, targety : int, *targetproperties: str):
@@ -23,11 +23,11 @@ class Ev3Coordinates:
         :param targetproperty:
         :type targetproperty:
         """
-        self.xCoordinate = targetx
-        self.yCoordinate = targety
-        self.propertyList = []
+        self.__xCoordinate = targetx
+        self.__yCoordinate = targety
+        self.__propertyList = []
         for tp in targetproperties:
-            self.propertyList.append(tp)
+            self.__propertyList.append(tp)
 
     #Variable Specific Functions
     #xCoordinate Specific Functions
@@ -37,7 +37,7 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        return self.xCoordinate
+        return self.__xCoordinate
 
     def set_xcoordinate(self, targetx : int):
         """
@@ -48,7 +48,7 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        self.xCoordinate = targetx
+        self.__xCoordinate = targetx
 
     #yCoordinate Specific Functions
     def get_ycoordinate(self) -> int:
@@ -57,7 +57,7 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        return self.yCoordinate
+        return self.__yCoordinate
 
     def set_ycoordinate(self, targety: int):
         """
@@ -67,7 +67,7 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        self.yCoordinate = targety
+        self.__yCoordinate = targety
 
     #propertyList Specfic Functions
     def get_propertylist(self) -> list:
@@ -76,7 +76,7 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        return self.propertyList
+        return self.__propertyList
 
     def set_properylist(self, targetlist):
         """
@@ -86,7 +86,7 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        self.propertyList = targetlist
+        self.__propertyList = targetlist
 
     def add_property_propertylist(self, *targetproperties: str):
         """
@@ -98,7 +98,7 @@ class Ev3Coordinates:
         :rtype:
         """
         for tp in targetproperties:
-            self.propertyList.append(tp)
+            self.__propertyList.append(tp)
 
     def remove_property_propertylist(self, targetproperty : str):
         """
@@ -109,17 +109,40 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        if targetproperty in self.propertyList:
-            self.propertyList.remove(targetproperty)
+        if targetproperty in self.__propertyList:
+            self.__propertyList.remove(targetproperty)
 
-    def __str__(self) -> str:
+
+    #Rich Comparisons < , <= , == , >=, >
+
+    def __lt__ (self, other) -> bool:
         """
-        String Representation of Ev3Coordinate object
+        Returns whether other (x,y) are less than vales of self.
 
+        :param other:
+        :type other:
         :return:
         :rtype:
         """
-        return '(' + str(self.xCoordinate) + ',' + str(self.yCoordinate) + ')'
+
+        if self.get_xcoordinate() < other.get_xcoordinate() and self.get_ycoordinate() < other.get_ycoordinate:
+            return True
+        else:
+            return False
+
+    def __le__(self, other):
+        """
+        Returns whether other (x,y) are less or equal to vales of self.
+
+        :param other:
+        :type other:
+        :return:
+        :rtype:
+        """
+        if self.get_xcoordinate() <= other.get_xcoordinate() and self.get_ycoordinate() <= other.get_ycoordinate:
+            return True
+        else:
+            return False
 
     def __eq__(self, other) -> bool :
         """
@@ -130,7 +153,48 @@ class Ev3Coordinates:
         :return:
         :rtype:
         """
-        if self.xCoordinate == other.xCoordinate and self.yCoordinate == other.yCoordinate:
+        if self.get_xcoordinate() == other.xCoordinate and self.get_xcoordinate() == other.yCoordinate:
             return True
         else:
             return False
+
+    def __gt__(self, other) -> bool :
+        """
+        Returns whether target coordinates is great (x,y) values than self.
+
+        :param other:
+        :type other:
+        :return:
+        :rtype:
+        """
+        if self.get_xcoordinate() > other.get_xcoordinate() and self.get_ycoordinate() > other.get_ycoordinate:
+            return True
+        else:
+            return False
+
+    def __ge__(self, other) -> bool :
+        """
+        Returns whether target coordinates is great or equal to (x,y) values than self.
+
+        :param other:
+        :type other:
+        :return:
+        :rtype:
+        """
+        if self.get_xcoordinate() >= other.get_xcoordinate() and self.get_ycoordinate() >= other.get_ycoordinate:
+            return True
+        else:
+            return False
+
+    #String Representations of Ev3Coordinates Class
+
+    def __str__(self) -> str :
+        """
+        String Representation of Ev3Coordinate object
+
+        :return:
+        :rtype:
+        """
+        return '(' + str(self.get_xcoordinate()) + ',' + str(self.get_ycoordinate()) + ')'
+
+
