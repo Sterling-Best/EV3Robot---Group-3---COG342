@@ -40,5 +40,23 @@ class EV3Region:
         else:
             return False
 
+    def ifcoordlistin(self, targetcoordinateslist: list) -> bool:
+        """
+
+        Check to see if all EV3Coordinates in a list are within the region.
+
+        Note: The reverse is not true, in that not all Ev3Coordinates in a region need to be in the list.
+
+        :param targetcoordinateslist:
+        :type targetcoordinateslist:
+        :return:
+        :rtype:
+        """
+
+        for targetcoord in targetcoordinateslist:
+            if targetcoord not in self.regionCoordinates:
+                return False
+        return True
+
 
 
