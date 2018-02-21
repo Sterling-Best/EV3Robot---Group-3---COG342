@@ -19,9 +19,14 @@ class Ev3Coordinates:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
         # TODO: Create Unittests
+
         """
         Inititialises a two interger graph point, x and y, for use of a 2D grid. X an Y must be integers.
         Target Properties (such as 'Point of Obstruction' or 'Point of Path') are optionally added as strings).
+
+        >>> a = Ev3Coordinates(2,4)
+        >>> print(a)
+        (2,4)
 
         :param targetx: Vertical
         :type targetx:
@@ -250,3 +255,7 @@ class Ev3Coordinates:
         :rtype:
         """
         return '(' + str(self.get_xcoordinate()) + ',' + str(self.get_ycoordinate()) + ')'
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
