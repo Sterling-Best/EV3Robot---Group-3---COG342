@@ -45,10 +45,15 @@ class Ev3Coordinates:
     #xCoordinate Specific Functions
     def get_xcoordinate(self) -> int:
         # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+        # TODO: Optional: Add more docstring tests
         # TODO: Create Unittests
         """
         Returns xCoordinate Value.
+
+        >>> a = Ev3Coordinates(5,6)
+        >>> a.get_xcoordinate()
+        5
+
         :return:
         :rtype:
         """
@@ -56,10 +61,15 @@ class Ev3Coordinates:
 
     def set_xcoordinate(self, targetx : int):
         # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+        # TODO: Optional: Add more docstring tests
         # TODO: Create Unittests
         """
         Sets xCoordinate to target value.
+
+        >>> a = Ev3Coordinates(2,8)
+        >>> a.set_xcoordinate(4)
+        >>> a.get_xcoordinate()
+        4
 
         :param targetx:
         :type targetx:
@@ -75,6 +85,11 @@ class Ev3Coordinates:
         # TODO: Create Unittests
         """
         Returns yCoordinate Value
+
+        >>> a = Ev3Coordinates(7,3)
+        >>> a.get_ycoordinate()
+        3
+
         :return:
         :rtype:
         """
@@ -86,6 +101,12 @@ class Ev3Coordinates:
         # TODO: Create Unittests
         """
         Sets yCoordinate to target value.
+
+        >>> a = Ev3Coordinates(9,1)
+        >>> a.set_ycoordinate(9)
+        >>> a.get_ycoordinate()
+        9
+
         :param targety:
         :type targety:
         :return:
@@ -246,7 +267,6 @@ class Ev3Coordinates:
 
     def __str__(self) -> str :
         # TODO: Convert to Google Style Docstrings
-        # TODO: Optional: Add more docstring tests
         # TODO: Create Unittests
         """
         String Representation of Ev3Coordinate object
