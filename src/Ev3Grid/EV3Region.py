@@ -43,7 +43,8 @@ class EV3Region:
     def ifcoordlistin(self, targetcoordinateslist: list) -> bool:
         """
 
-        Check to see if all EV3Coordinates in a list are within the region.
+        Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
+        found, the method will return false. 
 
         Note: The reverse is not true, in that not all Ev3Coordinates in a region need to be in the list.
 
