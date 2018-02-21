@@ -4,7 +4,7 @@ class Ev3Coordinates:
     """
 
     #TODO: Convert to Google Style Docstrings -- http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
-    #TODO: Add docstring tests
+    #TODO: Finish docstring tests
     #TODO: Find Docstring Generator
 
     #Declares Class Variables
@@ -27,6 +27,11 @@ class Ev3Coordinates:
         >>> a = Ev3Coordinates(2,4)
         >>> print(a)
         (2,4)
+        >>> b = Ev3Coordinates(6,2, "Test1")
+        >>> print(b)
+        (6,2)
+        >>> b.get_propertylist()
+        ['Test1']
 
         :param targetx: Vertical
         :type targetx:
@@ -121,6 +126,15 @@ class Ev3Coordinates:
         # TODO: Create Unittests
         """
         Returns propertyList
+
+        >>> a = Ev3Coordinates(1,1,"Test1")
+        >>> a.get_propertylist()
+        ['Test1']
+        >>> b = Ev3Coordinates(2,2,"Test2","Test3")
+        >>> b.get_propertylist()
+        ['Test2', 'Test3']
+
+
         :return:
         :rtype:
         """
