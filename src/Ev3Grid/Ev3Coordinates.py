@@ -117,6 +117,7 @@ class Ev3Coordinates:
 
     def __lt__ (self, other) -> bool:
         """
+        <
         Returns whether other (x,y) are less than vales of self.
 
         :param other:
@@ -132,6 +133,7 @@ class Ev3Coordinates:
 
     def __le__(self, other):
         """
+        <=
         Returns whether other (x,y) are less or equal to vales of self.
 
         :param other:
@@ -146,6 +148,7 @@ class Ev3Coordinates:
 
     def __eq__(self, other) -> bool :
         """
+        ==
         What to compare when determining whether an Ev3Coordinate object is equal to target object.
 
         :param other:
@@ -158,22 +161,9 @@ class Ev3Coordinates:
         else:
             return False
 
-    def __gt__(self, other) -> bool :
-        """
-        Returns whether target coordinates is great (x,y) values than self.
-
-        :param other:
-        :type other:
-        :return:
-        :rtype:
-        """
-        if self.get_xcoordinate() > other.get_xcoordinate() and self.get_ycoordinate() > other.get_ycoordinate:
-            return True
-        else:
-            return False
-
     def __ge__(self, other) -> bool :
         """
+        >=
         Returns whether target coordinates is great or equal to (x,y) values than self.
 
         :param other:
@@ -182,6 +172,21 @@ class Ev3Coordinates:
         :rtype:
         """
         if self.get_xcoordinate() >= other.get_xcoordinate() and self.get_ycoordinate() >= other.get_ycoordinate:
+            return True
+        else:
+            return False
+
+    def __gt__(self, other) -> bool:
+        """
+        >
+        Returns whether target coordinates is great (x,y) values than self.
+
+        :param other:
+        :type other:
+        :return:
+        :rtype:
+        """
+        if self.get_xcoordinate() > other.get_xcoordinate() and self.get_ycoordinate() > other.get_ycoordinate:
             return True
         else:
             return False
