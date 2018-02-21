@@ -16,6 +16,9 @@ class Ev3Coordinates:
 
     #Initializer
     def __init__(self, targetx : int, targety : int, *targetproperties: str):
+        # TODO: Convert to Google Style Docstrings
+        # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Inititialises a two interger graph point, x and y, for use of a 2D grid. X an Y must be integers.
         Target Properties (such as 'Point of Obstruction' or 'Point of Path') are optionally added as strings).
@@ -38,6 +41,7 @@ class Ev3Coordinates:
     def get_xcoordinate(self) -> int:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Returns xCoordinate Value.
         :return:
@@ -48,6 +52,7 @@ class Ev3Coordinates:
     def set_xcoordinate(self, targetx : int):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Sets xCoordinate to target value.
 
@@ -62,6 +67,7 @@ class Ev3Coordinates:
     def get_ycoordinate(self) -> int:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Returns yCoordinate Value
         :return:
@@ -72,6 +78,7 @@ class Ev3Coordinates:
     def set_ycoordinate(self, targety: int):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Sets yCoordinate to target value.
         :param targety:
@@ -85,6 +92,7 @@ class Ev3Coordinates:
     def get_propertylist(self) -> list:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Returns propertyList
         :return:
@@ -95,6 +103,7 @@ class Ev3Coordinates:
     def set_properylist(self, targetlist):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Sets propertyList to new targetList
         :param targetlist:
@@ -107,6 +116,7 @@ class Ev3Coordinates:
     def add_property_propertylist(self, *targetproperties: str):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Adds property strings to the target property list
 
@@ -121,6 +131,7 @@ class Ev3Coordinates:
     def remove_property_propertylist(self, targetproperty : str):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Finds and removes target property from property list.
 
@@ -138,6 +149,7 @@ class Ev3Coordinates:
     def __lt__ (self, other) -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         <
         Returns whether other (x,y) are less than vales of self.
@@ -156,6 +168,7 @@ class Ev3Coordinates:
     def __le__(self, other):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         <=
         Returns whether other (x,y) are less or equal to vales of self.
@@ -173,6 +186,7 @@ class Ev3Coordinates:
     def __eq__(self, other) -> bool :
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         ==
         What to compare when determining whether an Ev3Coordinate object is equal to target object.
@@ -190,6 +204,7 @@ class Ev3Coordinates:
     def __ge__(self, other) -> bool :
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         >=
         Returns whether target coordinates is great or equal to (x,y) values than self.
@@ -207,6 +222,7 @@ class Ev3Coordinates:
     def __gt__(self, other) -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         >
         Returns whether target coordinates is great (x,y) values than self.
@@ -226,6 +242,7 @@ class Ev3Coordinates:
     def __str__(self) -> str :
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         String Representation of Ev3Coordinate object
 

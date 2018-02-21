@@ -17,6 +17,9 @@ class EV3Region:
     regionCoordinates: list
 
     def __init__(self, targetcoordinates : Ev3Coordinates, targetregionsize: int):
+        # TODO: Convert to Google Style Docstrings
+        # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Initiates a Region with a first coordinate.
 
@@ -34,6 +37,7 @@ class EV3Region:
     def ifcoordin(self, target: Ev3Coordinates) -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
 
         Check to see if the target coordinates in questionare in this region.
@@ -51,6 +55,7 @@ class EV3Region:
     def ifcoordlistin(self, targetcoordinateslist: list) -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
 
         Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
@@ -72,6 +77,7 @@ class EV3Region:
     def addcoord(self, targetcoord: Ev3Coordinates):
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
+        # TODO: Create Unittests
         """
         Adds an Ev3Coordinates object to regionCoordinates list. Organizes the coordinate to fit in X, Y organizational structure.
 

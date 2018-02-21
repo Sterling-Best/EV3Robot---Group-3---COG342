@@ -26,21 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Ev3Coordinates.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ev3Coordinates.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4746">
-              <caret line="226" column="8" lean-forward="false" selection-start-line="226" selection-start-column="8" selection-end-line="227" selection-end-column="35" />
+            <state relative-caret-position="5292">
+              <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EV3Region.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EV3Region.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="75" column="105" lean-forward="false" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="105" />
+            <state relative-caret-position="346">
+              <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -85,8 +85,8 @@
         <option value="$PROJECT_DIR$/Test" />
         <option value="$PROJECT_DIR$/Ev3Grid/EV3Zone.py" />
         <option value="$PROJECT_DIR$/Ev3Grid/EV3Region.py" />
-        <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/EV3Region.py" />
+        <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" />
       </list>
     </option>
   </component>
@@ -425,18 +425,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4746">
-          <caret line="226" column="8" lean-forward="false" selection-start-line="226" selection-start-column="8" selection-end-line="227" selection-end-column="35" />
+        <state relative-caret-position="346">
+          <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="75" column="105" lean-forward="false" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="105" />
+        <state relative-caret-position="5292">
+          <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding />
         </state>
       </provider>
