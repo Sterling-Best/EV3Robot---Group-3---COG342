@@ -5,6 +5,10 @@ class EV3Region:
     A section/region of the world grid. Storing specific
     """
 
+    # TODO: Convert to Google Style Docstrings -- http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+    # TODO: Add docstring tests
+    # TODO: Find Docstring Generator
+
     __xMax: int
     __xMin: int
     __yMax: int
@@ -25,7 +29,11 @@ class EV3Region:
         self.__yMax = self.__xMin + targetregionsize
         self.regionCoordinates.append(targetcoordinates)
 
+    #TODO: Add get_ and set_ methods for __xMax, __xMin, __yMax, __yMin
+
     def ifcoordin(self, target: Ev3Coordinates) -> bool:
+        # TODO: Convert to Google Style Docstrings
+        # TODO: Add docstring tests
         """
 
         Check to see if the target coordinates in questionare in this region.
@@ -41,6 +49,8 @@ class EV3Region:
             return False
 
     def ifcoordlistin(self, targetcoordinateslist: list) -> bool:
+        # TODO: Convert to Google Style Docstrings
+        # TODO: Add docstring tests
         """
 
         Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
@@ -60,8 +70,10 @@ class EV3Region:
         return True
 
     def addcoord(self, targetcoord: Ev3Coordinates):
+        # TODO: Convert to Google Style Docstrings
+        # TODO: Add docstring tests
         """
-        Adds an Ev3Coordinates object to regionCoordinates list. Organizes the coordinate to fit in X, Y, Z organizational structure.
+        Adds an Ev3Coordinates object to regionCoordinates list. Organizes the coordinate to fit in X, Y organizational structure.
 
         :param targetcoord:
         :type targetcoord:
