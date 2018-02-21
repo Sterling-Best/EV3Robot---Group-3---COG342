@@ -1,0 +1,17 @@
+from src.Ev3Grid import Ev3Coordinates
+
+
+a = Ev3Coordinates.Ev3Coordinates(2, 4, "")
+b = Ev3Coordinates.Ev3Coordinates(1, 5, "Point of Obstruction")
+c = Ev3Coordinates.Ev3Coordinates(2, 4, "Point of Path")
+d = Ev3Coordinates.Ev3Coordinates(7, 8, "Point of Obstruction", "Point of Path")
+print(a.get_xcoordinate())
+print(a == b)
+print(a == c)
+print(b.get_propertylist())
+print(d.get_propertylist())
+print(c)
+print(c.get_propertylist())
+c.remove_property_propertylist("Point of Path")
+print(c.get_propertylist())
+
