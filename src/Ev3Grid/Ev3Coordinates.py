@@ -146,6 +146,14 @@ class Ev3Coordinates:
         # TODO: Create Unittests
         """
         Sets propertyList to new targetList
+
+        >>> a = Ev3Coordinates(1,1,"Test1")
+        >>> a.get_propertylist()
+        ['Test1']
+        >>> a.set_properylist(['Test2'])
+        >>> a.get_propertylist()
+        ['Test2']
+
         :param targetlist:
         :type targetlist:
         :return:
@@ -159,6 +167,13 @@ class Ev3Coordinates:
         # TODO: Create Unittests
         """
         Adds property strings to the target property list
+
+        >>> a = Ev3Coordinates(1,1,"Test1")
+        >>> a.get_propertylist()
+        ['Test1']
+        >>> a.add_property_propertylist("Test2")
+        >>> a.get_propertylist()
+        ['Test1', 'Test2']
 
         :param targetproperties:
         :type targetproperties:
@@ -174,6 +189,13 @@ class Ev3Coordinates:
         # TODO: Create Unittests
         """
         Finds and removes target property from property list.
+
+        >>> a = Ev3Coordinates(1,1,"Test1","Test2")
+        >>> a.get_propertylist()
+        ['Test1', 'Test2']
+        >>> a.remove_property_propertylist("Test2")
+        >>> a.get_propertylist()
+        ['Test1']
 
         :param targetproperty:
         :type targetproperty:
@@ -194,31 +216,56 @@ class Ev3Coordinates:
         <
         Returns whether other (x,y) are less than vales of self.
 
+        >>> a = Ev3Coordinates(1,1)
+        >>> b = Ev3Coordinates(1,2, "Test1")
+        >>> a < b
+        True
+        >>> b < a
+        False
+
         :param other:
         :type other:
         :return:
         :rtype:
         """
 
-        if self.get_xcoordinate() < other.get_xcoordinate() and self.get_ycoordinate() < other.get_ycoordinate:
+        if self.get_xcoordinate() < other.get_xcoordinate() and self.get_ycoordinate() < other.get_ycoordinate():
+            return True
+        elif self.get_xcoordinate() == other.get_xcoordinate() and self.get_ycoordinate() < other.get_ycoordinate():
             return True
         else:
             return False
 
-    def __le__(self, other):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def __le__(self, a_other: 'Ev3Coordinates') -> bool:
         # TODO: Create Unittests
         """
         <=
         Returns whether other (x,y) are less or equal to vales of self.
 
-        :param other:
-        :type other:
-        :return:
-        :rtype:
+        Args:
+            a_other (Ev3Coordinates):
+
+        Returns:
+            bool: True if this coordinate is less than or equal other coordinate. False if greater than.
+
+        >>> a = Ev3Coordinates(5,5)
+        >>> b = Ev3Coordinates(5,5, "Test1")
+        >>> c = Ev3Coordinates(4,2)
+        >>> d = Ev3Coordinates(5,3, "Test2", "Test3")
+        >>> a <= b
+        True
+        >>> b <= a
+        True
+        >>> a <= c
+        False
+        >>> c <= a
+        True
+        >>> a <= d
+        False
+        >>> d <= a
+        True
         """
-        if self.get_xcoordinate() <= other.get_xcoordinate() and self.get_ycoordinate() <= other.get_ycoordinate:
+        if self.get_xcoordinate() <= a_other.get_xcoordinate() and self.get_ycoordinate() <= a_other.get_ycoordinate():
             return True
         else:
             return False
@@ -231,12 +278,23 @@ class Ev3Coordinates:
         ==
         What to compare when determining whether an Ev3Coordinate object is equal to target object.
 
+        >>> a = Ev3Coordinates(1,1)
+        >>> b = Ev3Coordinates(1,1, "Test1")
+        >>> c = Ev3Coordinates(1,2)
+        >>> d = Ev3Coordinates(2,2, "Test2")
+        >>> a == b
+        True
+        >>> a == c
+        False
+        >>> a == d
+        False
+
         :param other:
         :type other:
         :return:
         :rtype:
         """
-        if self.get_xcoordinate() == other.xCoordinate and self.get_xcoordinate() == other.yCoordinate:
+        if self.get_xcoordinate() == other.get_xcoordinate() and self.get_xcoordinate() == other.get_ycoordinate():
             return True
         else:
             return False
@@ -300,6 +358,7 @@ class Ev3Coordinates:
         """
         return '(' + str(self.get_xcoordinate()) + ',' + str(self.get_ycoordinate()) + ')'
 
+#When running Ev3Coordinates.py directly from file, doctests will run.
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
