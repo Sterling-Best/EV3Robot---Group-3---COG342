@@ -236,7 +236,7 @@ class Ev3Coordinates:
         Returns whether other (x,y) are less or equal to vales of self.
 
         Args:
-            a_other (Ev3Coordinates):
+            a_other (Ev3Coordinates): Ev3Coordinate being compared to self.
 
         Returns:
             bool: True if this coordinate is less than or equal other coordinate. False if greater than.
@@ -264,14 +264,18 @@ class Ev3Coordinates:
         else:
             return False
 
-    def __eq__(self, other) -> bool :
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def __eq__(self, a_other: 'Ev3Coordinates') -> bool :
         # TODO: Create Unittests
         """
         ==
         What to compare when determining whether an Ev3Coordinate object is equal to target object.
+        Args:
+            a_other (Ev3Coordinates): Ev3Coordinate being compared to self.
 
+        Returns:
+            bool: True if value of a_other are the same as self.
+
+        Doctest:
         >>> a = Ev3Coordinates(1,1)
         >>> b = Ev3Coordinates(1,1, "Test1")
         >>> c = Ev3Coordinates(1,2)
@@ -282,36 +286,48 @@ class Ev3Coordinates:
         False
         >>> a == d
         False
-
-        :param other:
-        :type other:
-        :return:
-        :rtype:
         """
-        if self.get_xcoordinate() == other.get_xcoordinate() and self.get_xcoordinate() == other.get_ycoordinate():
+        if self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_xcoordinate() == a_other.get_ycoordinate():
             return True
         else:
             return False
 
-    def __ge__(self, other) -> bool :
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def __ge__(self, a_other: 'Ev3Coordinates') -> bool :
         # TODO: Create Unittests
         """
         >=
         Returns whether target coordinates is great or equal to (x,y) values than self.
 
-        :param other:
-        :type other:
-        :return:
-        :rtype:
+        Args:
+            a_other (int): Ev3Coordinate being compared to self.
+
+        Returns:
+            bool: True if self is greater than or equal to target Ev3Coordinate
+
+        Doctest:
+        >>> a = Ev3Coordinates(5,5)
+        >>> b = Ev3Coordinates(5,5, "Test1")
+        >>> c = Ev3Coordinates(4,2)
+        >>> d = Ev3Coordinates(5,3, "Test2", "Test3")
+        >>> a >= b
+        True
+        >>> b >= a
+        True
+        >>> a >= c
+        True
+        >>> c >= a
+        False
+        >>> a >= d
+        True
+        >>> d >= a
+        False
         """
-        if self.get_xcoordinate() >= other.get_xcoordinate() and self.get_ycoordinate() >= other.get_ycoordinate:
+        if self.get_xcoordinate() >= a_other.get_xcoordinate() and self.get_ycoordinate() >= a_other.get_ycoordinate():
             return True
         else:
             return False
 
-    def __gt__(self, other) -> bool:
+    def __gt__(self, a_other: 'Ev3Coordinates') -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
         # TODO: Create Unittests
@@ -319,12 +335,23 @@ class Ev3Coordinates:
         >
         Returns whether target coordinates is great (x,y) values than self.
 
-        :param other:
-        :type other:
-        :return:
-        :rtype:
+        Args:
+            a_other (Ev3Coordinates): Ev3Coordinate being compared to self.
+
+        Returns:
+            bool: True if self is greater than target Ev3Coordinates
+
+        Doctest:
+                >>> a = Ev3Coordinates(1,1)
+        >>> b = Ev3Coordinates(1,2, "Test1")
+        >>> a > b
+        False
+        >>> b > a
+        True
         """
-        if self.get_xcoordinate() > other.get_xcoordinate() and self.get_ycoordinate() > other.get_ycoordinate:
+        if self.get_xcoordinate() > a_other.get_xcoordinate() and self.get_ycoordinate() > a_other.get_ycoordinate():
+            return True
+        elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_ycoordinate() > a_other.get_ycoordinate():
             return True
         else:
             return False
@@ -332,11 +359,14 @@ class Ev3Coordinates:
     #String Representations of Ev3Coordinates Class
 
     def __str__(self) -> str :
-        # TODO: Convert to Google Style Docstrings
         # TODO: Create Unittests
         """
         String Representation of Ev3Coordinate object
 
+        Returns:
+            str: String representation of EV3Coordinate object
+
+        Doctest:
         >>> a = Ev3Coordinates(5,6)
         >>> print(a)
         (5,6)
@@ -346,9 +376,6 @@ class Ev3Coordinates:
         >>> c = Ev3Coordinates(7, -9)
         >>> print(c)
         (7,-9)
-
-        :return:
-        :rtype:
         """
         return '(' + str(self.get_xcoordinate()) + ',' + str(self.get_ycoordinate()) + ')'
 
