@@ -155,77 +155,76 @@ class Ev3Coordinates:
         """
         self.__propertyList = a_targetlist
 
-    def add_property_propertylist(self, *targetproperties: str):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def add_property_propertylist(self, *a_targetproperties: str) -> None:
         # TODO: Create Unittests
         """
         Adds property strings to the target property list
 
+        Args:
+            *a_targetproperties (str): Strings that are to be added to self.__propertyList
+
+        Returns:
+            None: Appends property strings to self.__propertyList
+
+        Doctest:
         >>> a = Ev3Coordinates(1,1,"Test1")
         >>> a.get_propertylist()
         ['Test1']
         >>> a.add_property_propertylist("Test2")
         >>> a.get_propertylist()
         ['Test1', 'Test2']
-
-        :param targetproperties:
-        :type targetproperties:
-        :return:
-        :rtype:
         """
-        for tp in targetproperties:
+        for tp in a_targetproperties:
             self.__propertyList.append(tp)
 
-    def remove_property_propertylist(self, targetproperty : str):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def remove_property_propertylist(self, a_targetproperty : str) -> None:
         # TODO: Create Unittests
         """
         Finds and removes target property from property list.
 
+        Args:
+            a_targetproperty (str): String to find and remove with self.__propteryList
+
+        Returns:
+            None: Modifies self._propteryList be removing indicated (a_targetporptery) from self.__propertyList)
+
+        Doctest:
         >>> a = Ev3Coordinates(1,1,"Test1","Test2")
         >>> a.get_propertylist()
         ['Test1', 'Test2']
         >>> a.remove_property_propertylist("Test2")
         >>> a.get_propertylist()
         ['Test1']
-
-        :param targetproperty:
-        :type targetproperty:
-        :return:
-        :rtype:
         """
-        if targetproperty in self.__propertyList:
-            self.__propertyList.remove(targetproperty)
+        if a_targetproperty in self.__propertyList:
+            self.__propertyList.remove(a_targetproperty)
 
 
     #Rich Comparisons < , <= , == , >=, >
 
-    def __lt__ (self, other) -> bool:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def __lt__ (self, a_other: 'Ev3Coordinates') -> bool:
         # TODO: Create Unittests
         """
         <
         Returns whether other (x,y) are less than vales of self.
 
+        Args:
+            a_other (Ev3Coordinates): Ev3Coordinate being compared to self.
+
+        Returns:
+            bool: True if self is less than a_other.
+
+        Doctest:
         >>> a = Ev3Coordinates(1,1)
         >>> b = Ev3Coordinates(1,2, "Test1")
         >>> a < b
         True
         >>> b < a
         False
-
-        :param other:
-        :type other:
-        :return:
-        :rtype:
         """
-
-        if self.get_xcoordinate() < other.get_xcoordinate() and self.get_ycoordinate() < other.get_ycoordinate():
+        if self.get_xcoordinate() < a_other.get_xcoordinate() and self.get_ycoordinate() < a_other.get_ycoordinate():
             return True
-        elif self.get_xcoordinate() == other.get_xcoordinate() and self.get_ycoordinate() < other.get_ycoordinate():
+        elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_ycoordinate() < a_other.get_ycoordinate():
             return True
         else:
             return False
