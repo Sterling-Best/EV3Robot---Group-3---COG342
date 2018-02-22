@@ -15,15 +15,20 @@ class Ev3Coordinates:
     __propertyList: list
 
     #Initializer
-    def __init__(self, targetx : int, targety : int, *targetproperties: str):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Optional: Add more docstring tests
+    def __init__(self, a_targetx : int, a_targety : int, *a_targetproperties: str):
         # TODO: Create Unittests
-
         """
         Inititialises a two interger graph point, x and y, for use of a 2D grid. X an Y must be integers.
+
         Target Properties (such as 'Point of Obstruction' or 'Point of Path') are optionally added as strings).
 
+        Args:
+            a_targetx (int): Desired value of self.__xCoordinate
+            a_targety (int): Diesired value of self.__yCoordinate
+            *a_targetproperties (str): String objects which represent prropeties/Attributes of the Coordinates.
+                To beplaced in list
+
+        Doctest:
         >>> a = Ev3Coordinates(2,4)
         >>> print(a)
         (2,4)
@@ -32,134 +37,123 @@ class Ev3Coordinates:
         (6,2)
         >>> b.get_propertylist()
         ['Test1']
-
-        :param targetx: Vertical
-        :type targetx:
-        :param targety:
-        :type targety:
-        :param targetproperty:
-        :type targetproperty:
         """
-        self.__xCoordinate = targetx
-        self.__yCoordinate = targety
+        self.__xCoordinate = a_targetx
+        self.__yCoordinate = a_targety
         self.__propertyList = []
-        for tp in targetproperties:
+        for tp in a_targetproperties:
             self.__propertyList.append(tp)
 
     #Variable Specific Functions
     #xCoordinate Specific Functions
     def get_xcoordinate(self) -> int:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Optional: Add more docstring tests
         # TODO: Create Unittests
         """
-        Returns xCoordinate Value.
+        Returns __xCoordinate Value.
 
+        Returns:
+            int: Current value of self.__xCoordinate
+
+        Doctest:
         >>> a = Ev3Coordinates(5,6)
         >>> a.get_xcoordinate()
         5
-
-        :return:
-        :rtype:
         """
         return self.__xCoordinate
 
-    def set_xcoordinate(self, targetx : int):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Optional: Add more docstring tests
+    def set_xcoordinate(self, a_targetx : int) -> None:
         # TODO: Create Unittests
         """
         Sets xCoordinate to target value.
 
+        Args:
+            a_targetx (int): Desired value for self.__xCoordinate
+
+        Returns:
+            None: Replaces current value of self.__xCoordinate with a_targetx
+
+        Doctest:
         >>> a = Ev3Coordinates(2,8)
         >>> a.set_xcoordinate(4)
         >>> a.get_xcoordinate()
         4
-
-        :param targetx:
-        :type targetx:
-        :return:
-        :rtype:
         """
-        self.__xCoordinate = targetx
+        self.__xCoordinate = a_targetx
 
     #yCoordinate Specific Functions
     def get_ycoordinate(self) -> int:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
         # TODO: Create Unittests
         """
         Returns yCoordinate Value
 
+        Returns:
+            int: Current value of self.__ycoordinate
+
+        Doctest:
         >>> a = Ev3Coordinates(7,3)
         >>> a.get_ycoordinate()
         3
-
-        :return:
-        :rtype:
         """
         return self.__yCoordinate
 
-    def set_ycoordinate(self, targety: int):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def set_ycoordinate(self, a_targety: int) -> None:
         # TODO: Create Unittests
         """
         Sets yCoordinate to target value.
 
+        Args:
+            a_targety (int): Desired value for self.__yCoordinate
+
+        Returns:
+            None: Replaces current value of self.__xCoordinate with a_targetx
+
+        Doctest:
         >>> a = Ev3Coordinates(9,1)
         >>> a.set_ycoordinate(9)
         >>> a.get_ycoordinate()
         9
-
-        :param targety:
-        :type targety:
-        :return:
-        :rtype:
         """
-        self.__yCoordinate = targety
+        self.__yCoordinate = a_targety
 
     #propertyList Specfic Functions
     def get_propertylist(self) -> list:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
         # TODO: Create Unittests
         """
         Returns propertyList
 
+        Returns:
+            list: List containing property strings
+
+        Doctest:
         >>> a = Ev3Coordinates(1,1,"Test1")
         >>> a.get_propertylist()
         ['Test1']
         >>> b = Ev3Coordinates(2,2,"Test2","Test3")
         >>> b.get_propertylist()
         ['Test2', 'Test3']
-
-
-        :return:
-        :rtype:
         """
         return self.__propertyList
 
-    def set_properylist(self, targetlist):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def set_properylist(self, a_targetlist: list) -> None:
         # TODO: Create Unittests
         """
         Sets propertyList to new targetList
 
+        Args:
+            a_targetlist (list): Disired list of propety strings to replace self.__propertyList
+
+        Returns:
+            None: Replaces value of self.__propertyList with a_targetlist
+
+        Doctest:
         >>> a = Ev3Coordinates(1,1,"Test1")
         >>> a.get_propertylist()
         ['Test1']
         >>> a.set_properylist(['Test2'])
         >>> a.get_propertylist()
         ['Test2']
-
-        :param targetlist:
-        :type targetlist:
-        :return:
-        :rtype:
         """
-        self.__propertyList = targetlist
+        self.__propertyList = a_targetlist
 
     def add_property_propertylist(self, *targetproperties: str):
         # TODO: Convert to Google Style Docstrings
@@ -248,6 +242,7 @@ class Ev3Coordinates:
         Returns:
             bool: True if this coordinate is less than or equal other coordinate. False if greater than.
 
+        Doctest:
         >>> a = Ev3Coordinates(5,5)
         >>> b = Ev3Coordinates(5,5, "Test1")
         >>> c = Ev3Coordinates(4,2)
