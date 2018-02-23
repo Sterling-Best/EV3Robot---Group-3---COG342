@@ -1,4 +1,4 @@
-from src.Ev3Grid import Ev3Coordinates
+from src.Ev3Grid import Ev3Coordinates as Ev3Coordinates
 
 class EV3Region:
     """
@@ -23,16 +23,78 @@ class EV3Region:
         """
         Initiates a Region with a first coordinate.
 
-        :param targetcoordinates:
-        :type targetcoordinates:
+        Args:
+            targetcoordinates (Ev3Coordinates): First Ev3Coordinate for the region
+            targetregionsize (int): Size of the region that determines what coordinates should be put inside it.
+
+        >>> aC = Ev3Coordinates.Ev3Coordinates(0,0)
+        >>> aR = EV3Region(aC, 10)
+        >>> aR.get_xmin()
+        0
+        >>> aR.get_xmax()
+        9
+        >>> aR.get_ymin()
+        0
+        >>> aR.get_xmax()
+        9
         """
-        self.__xMin = (targetcoordinates.get_xcoordinate() // targetregionsize) * targetregionsize
-        self.__xMax = self.__xMin + targetregionsize
-        self.__yMin = (targetcoordinates.get_ycoordinate() // targetregionsize) * targetregionsize
-        self.__yMax = self.__xMin + targetregionsize
+        self.__xMin = ((targetcoordinates.get_xcoordinate() // targetregionsize) * targetregionsize)
+        self.__xMax = self.__xMin + targetregionsize  - 1
+        self.__yMin = ((targetcoordinates.get_ycoordinate() // targetregionsize) * targetregionsize)
+        self.__yMax = self.__xMin + targetregionsize - 1
+        self.regionCoordinates = list()
         self.regionCoordinates.append(targetcoordinates)
 
     #TODO: Add get_ and set_ methods for __xMax, __xMin, __yMax, __yMin
+
+    def get_xmin(self) -> int:
+        #TODO: Create Doctests
+        #TODO: Create Unittests
+        """
+        Returns current value of self.__xMin
+
+        Returns:
+            int: Current value of self.__xMin
+
+        """
+        return self.__xMin
+
+    def get_xmax(self) -> int:
+        # TODO: Create Doctests
+        # TODO: Create Unittests
+        """
+        Returns current value of self.__xMax
+
+        Returns:
+            int: Current value of self.__xMax
+
+        """
+        return self.__xMax
+
+    def get_ymin(self) -> int:
+        # TODO: Create Doctests
+        # TODO: Create Unittests
+        """
+        Returns current value of self.__yMin
+
+        Returns:
+            int: Current value of self.__yMin
+
+        """
+        return self.__yMin
+
+    def get_ymax(self) -> int:
+        # TODO: Create Doctests
+        # TODO: Create Unittests
+        """
+        Returns current value of self.__yMax
+
+        Returns:
+            int: Current value of self.__yMax
+
+        """
+        return self.__yMax
+
 
     def ifcoordin(self, target: Ev3Coordinates) -> bool:
         # TODO: Convert to Google Style Docstrings
@@ -93,7 +155,9 @@ class EV3Region:
                 elif rc < targetcoord:
                     self.regionCoordinates.insert(self.regionCoordinates.index(rc), targetcoord)
 
-
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
 
 
 
