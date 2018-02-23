@@ -1,10 +1,13 @@
 class Ev3Coordinates:
     """
-    Beep
+    Ev3Coordinates represent a point of x,y coordinates and the properties of that point.
+
+    __xCoordinate: Represents an interger on the x axis
+    __yCoordinates: Represents an interger on the y axis
+
+    __propertyList: A list of strings that represent properties of the coordinates.
     """
 
-    #TODO: Convert to Google Style Docstrings -- http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
-    #TODO: Finish docstring tests
     #TODO: Find Docstring Generator
 
     #Declares Class Variables
