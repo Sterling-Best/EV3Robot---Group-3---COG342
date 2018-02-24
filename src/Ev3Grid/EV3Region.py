@@ -41,14 +41,13 @@ class EV3Region:
         self.__xMin = ((targetcoordinates.get_xcoordinate() // targetregionsize) * targetregionsize)
         self.__xMax = self.__xMin + targetregionsize  - 1
         self.__yMin = ((targetcoordinates.get_ycoordinate() // targetregionsize) * targetregionsize)
-        self.__yMax = self.__xMin + targetregionsize - 1
+        self.__yMax = self.__yMin + targetregionsize - 1
         self.regionCoordinates = list()
         self.regionCoordinates.append(targetcoordinates)
 
     #TODO: Add get_ and set_ methods for __xMax, __xMin, __yMax, __yMin
 
     def get_xmin(self) -> int:
-        #TODO: Create Doctests
         #TODO: Create Unittests
         """
         Returns current value of self.__xMin
@@ -56,11 +55,17 @@ class EV3Region:
         Returns:
             int: Current value of self.__xMin
 
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(4,6)
+        >>> aR = EV3Region(aC, 8)
+        >>> print(aR)
+        {0,0,7,7 | [(4,6)]}
+        >>> aR.get_xmin()
+        0
         """
         return self.__xMin
 
     def get_xmax(self) -> int:
-        # TODO: Create Doctests
         # TODO: Create Unittests
         """
         Returns current value of self.__xMax
@@ -68,6 +73,13 @@ class EV3Region:
         Returns:
             int: Current value of self.__xMax
 
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(18,34)
+        >>> aR = EV3Region(aC, 7)
+        >>> print(aR)
+        {14,28,20,34 | [(18,34)]}
+        >>> aR.get_xmin()
+        14
         """
         return self.__xMax
 
@@ -156,6 +168,9 @@ class EV3Region:
                     self.regionCoordinates.insert(self.regionCoordinates.index(rc), targetcoord)
 
     def __str__(self) -> str:
+        #TODO: Code Refacotr
+        #Code works but its using str() references to compare objects ratherthan the objects themselfs. Should be fixed.
+        #TODO: Create Unittests
         """
         Returns string representation of Ev3Regon
 
@@ -170,14 +185,14 @@ class EV3Region:
         >>> print(aR)
         {0,0,9,9 | [(4,5)]}
         """
-        regionBorders = str(self.get_xmin()) + ',' + str(self.get_ymin()) + ',' + str(self.get_xmax()) + ',' + str(self.get_ymax())
-        rCString = '['
+        regionborders = str(self.get_xmin()) + ',' + str(self.get_ymin()) + ',' + str(self.get_xmax()) + ',' + str(self.get_ymax())
+        rcstring = '['
         for coord in self.regionCoordinates:
             if str(self.regionCoordinates[-1]) == str(coord):
-                rCString = rCString + str(coord) + ']'
+                rcstring = rcstring + str(coord) + ']'
             else:
-                rCString = rCString + str(coord) + ", "
-        return '{' + regionBorders + " | " + rCString + '}'
+                rcstring = rcstring + str(coord) + ", "
+        return '{' + regionborders + " | " + rcstring + '}'
 
 
 if __name__ == "__main__":
