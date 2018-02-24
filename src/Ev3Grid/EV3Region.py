@@ -243,46 +243,71 @@ class EV3Region:
         else:
             return False
 
-    def ifcoordlistin(self, targetcoordinateslist: list) -> bool:
+    def listcoordcheck(self, targetcoordinateslist: list) -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
         # TODO: Create Unittests
         """
-
         Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
         found, the method will return false.
 
         Note: The reverse is not true, in that not all Ev3Coordinates in a region need to be in the list.
 
-        :param targetcoordinateslist:
-        :type targetcoordinateslist:
-        :return:
-        :rtype:
-        """
+        Args:
+            targetcoordinateslist (list): List of Ev3Coordinates that should in in regionCoordinates
 
+        Returns:
+            bool: True if all Ev3Coordinates in target list are found within self.regionCoordinates
+
+        Doctest:
+        """
         for targetcoord in targetcoordinateslist:
             if targetcoord not in self.regionCoordinates:
                 return False
         return True
 
-    def addcoord(self, targetcoord: Ev3Coordinates):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
+    def addcoord(self, a_targetcoords: Ev3Coordinates) -> None:
         # TODO: Create Unittests
         """
-        Adds an Ev3Coordinates object to regionCoordinates list. Organizes the coordinate to fit in X, Y organizational structure.
+                Adds an Ev3Coordinates object to regionCoordinates list. Organizes the coordinate to fit in X, Y organizational structure.
 
-        :param targetcoord:
-        :type targetcoord:
-        :return:
-        :rtype:
+        {0,0,15,15 | [(4,12), (5,8), (5,13), (14,2)]}
+        Args:
+            a_targetcoords (Ev3Coordinates): Coordinate to add to self.regionCoordinates
+
+        Returns:
+            None: Adds new coordinate to self.regionCoordinates into proper place.
+
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(4,12)
+        >>> bC = Ev3Coordinates.Ev3Coordinates(5,13)
+        >>> cC = Ev3Coordinates.Ev3Coordinates(14,2)
+        >>> dC = Ev3Coordinates.Ev3Coordinates(5,8)
+        >>> aR = EV3Region(aC, 16)
+        >>> print (aR)
+        {0,0,15,15 | [(4,12)]}
+        >>> aR.addcoord(bC)
+        >>> print(aR)
+        {0,0,15,15 | [(4,12), (5,13)]}
+        >>> aR.addcoord(cC)
+        >>> print(aR)
+        {0,0,15,15 | [(4,12), (5,13), (14,2)]}
+        >>> aR.addcoord(dC)
+        >>> print(aR)
+        {0,0,15,15 | [(4,12), (5,8), (5,13), (14,2)]}
         """
-        if self.regionCoordinates is not None or not self.regionCoordinates:
-            for rc in self.regionCoordinates:
-                if rc == targetcoord:
-                    break
-                elif rc < targetcoord:
-                    self.regionCoordinates.insert(self.regionCoordinates.index(rc), targetcoord)
+        for rc in self.regionCoordinates:
+            if rc > a_targetcoords:
+                ref = self.regionCoordinates.index(rc)
+                self.regionCoordinates.insert(ref, a_targetcoords)
+                break
+            elif a_targetcoords > rc and self.regionCoordinates.index(rc) == len(self.regionCoordinates) - 1:
+                self.regionCoordinates.append(a_targetcoords)
+                break
+
+    #TODO: Add sort() method. Would sort self.regionCoordinates
+
+    #TODO: Add rich comparison metods.
 
     def __str__(self) -> str:
         #TODO: Code Refacotr
@@ -304,11 +329,15 @@ class EV3Region:
         """
         regionborders = str(self.get_xmin()) + ',' + str(self.get_ymin()) + ',' + str(self.get_xmax()) + ',' + str(self.get_ymax())
         rcstring = '['
-        for coord in self.regionCoordinates:
-            if str(self.regionCoordinates[-1]) == str(coord):
-                rcstring = rcstring + str(coord) + ']'
-            else:
-                rcstring = rcstring + str(coord) + ", "
+        if len(self.regionCoordinates) > 1:
+            for coord in self.regionCoordinates:
+                rcstring = rcstring + str(coord)
+                if coord != self.regionCoordinates[-1]:
+                    rcstring = rcstring + ', '
+                else:
+                    rcstring = rcstring + ']'
+        else:
+            rcstring = rcstring + str(self.regionCoordinates[0]) + ']'
         return '{' + regionborders + " | " + rcstring + '}'
 
 

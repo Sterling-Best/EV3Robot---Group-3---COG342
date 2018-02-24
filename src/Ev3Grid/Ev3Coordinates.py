@@ -290,10 +290,42 @@ class Ev3Coordinates:
         >>> a == d
         False
         """
-        if self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_xcoordinate() == a_other.get_ycoordinate():
+        if not isinstance(a_other, Ev3Coordinates):
+            return False
+        elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_xcoordinate() == a_other.get_ycoordinate():
             return True
         else:
             return False
+
+    def __ne__(self, a_other: 'Ev3Coordinates') -> bool:
+        #TODO: Create Unittests
+        """
+        !=
+        Determine whether two Ev3Coordinates objects were equal.
+        Args:
+            a_other (Ev3Coordinates): Ev3Coordinate being compared to self.
+
+        Returns:
+            bool: True if value of a_other is not the same as self.
+
+        Doctest:
+        >>> a = Ev3Coordinates(1,1)
+        >>> b = Ev3Coordinates(1,1, "Test1")
+        >>> c = Ev3Coordinates(1,2)
+        >>> d = Ev3Coordinates(2,2, "Test2")
+        >>> a != b
+        False
+        >>> a != c
+        True
+        >>> a != d
+        True
+        """
+        if not isinstance(a_other, Ev3Coordinates):
+            return True
+        elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_ycoordinate() == a_other.get_ycoordinate():
+            return False
+        else:
+            return True
 
     def __ge__(self, a_other: 'Ev3Coordinates') -> bool :
         # TODO: Create Unittests
@@ -345,14 +377,20 @@ class Ev3Coordinates:
             bool: True if self is greater than target Ev3Coordinates
 
         Doctest:
-                >>> a = Ev3Coordinates(1,1)
+        >>> a = Ev3Coordinates(1,1)
         >>> b = Ev3Coordinates(1,2, "Test1")
         >>> a > b
         False
         >>> b > a
         True
+        >>> c = Ev3Coordinates(5,13)
+        >>> d = Ev3Coordinates(14,2)
+        >>> d > c
+        True
+        >>> c > d
+        False
         """
-        if self.get_xcoordinate() > a_other.get_xcoordinate() and self.get_ycoordinate() > a_other.get_ycoordinate():
+        if self.get_xcoordinate() > a_other.get_xcoordinate():
             return True
         elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_ycoordinate() > a_other.get_ycoordinate():
             return True
