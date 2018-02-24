@@ -104,6 +104,13 @@ class EV3Region:
         Returns:
             int: Current value of self.__yMax
 
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(7,22)
+        >>> aR = EV3Region(aC, 8)
+        >>> print(aR)
+        {0,16,7,23 | [(7,22)]}
+        >>> aR.get_ymax()
+        23
         """
         return self.__yMax
 
