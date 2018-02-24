@@ -289,10 +289,14 @@ class Ev3Coordinates:
         False
         >>> a == d
         False
+        >>> aC = Ev3Coordinates(4,5)
+        >>> bC = Ev3Coordinates(4,5)
+        >>> aC == bC
+        True
         """
         if not isinstance(a_other, Ev3Coordinates):
             return False
-        elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_xcoordinate() == a_other.get_ycoordinate():
+        elif self.get_xcoordinate() == a_other.get_xcoordinate() and self.get_ycoordinate() == a_other.get_ycoordinate():
             return True
         else:
             return False

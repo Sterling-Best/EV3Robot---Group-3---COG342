@@ -17,8 +17,6 @@ class EV3Region:
     regionCoordinates: list
 
     def __init__(self, targetcoordinates : Ev3Coordinates, targetregionsize: int):
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
         # TODO: Create Unittests
         """
         Initiates a Region with a first coordinate.
@@ -216,8 +214,6 @@ class EV3Region:
         self.__yMax = a_targetymax
 
     def simplecoordcheck(self, target: Ev3Coordinates) -> bool:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
         # TODO: Create Unittests
         """
         Check to see if the target coordinates in questionare in this region.
@@ -244,8 +240,6 @@ class EV3Region:
             return False
 
     def listcoordcheck(self, targetcoordinateslist: list) -> bool:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
         # TODO: Create Unittests
         """
         Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
@@ -260,6 +254,26 @@ class EV3Region:
             bool: True if all Ev3Coordinates in target list are found within self.regionCoordinates
 
         Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(4,5)
+        >>> bC = Ev3Coordinates.Ev3Coordinates(6,7)
+        >>> cC = Ev3Coordinates.Ev3Coordinates(7,7)
+        >>> aR = EV3Region(aC, 8)
+        >>> aR.addcoord(bC)
+        >>> aR.addcoord(cC)
+        >>> print(aR)
+        {0,0,7,7 | [(4,5), (6,7), (7,7)]}
+        >>> dC = Ev3Coordinates.Ev3Coordinates(4,5)
+        >>> eC = Ev3Coordinates.Ev3Coordinates(7,7)
+        >>> aC == dC
+        True
+        >>> aL = [dC,eC]
+        >>> fC = Ev3Coordinates.Ev3Coordinates(8,4)
+        >>> bL = aL + [fC]
+        >>> aR.listcoordcheck(aL)
+        True
+        >>> aR.listcoordcheck(bL)
+        False
+
         """
         for targetcoord in targetcoordinateslist:
             if targetcoord not in self.regionCoordinates:
@@ -304,6 +318,8 @@ class EV3Region:
             elif a_targetcoords > rc and self.regionCoordinates.index(rc) == len(self.regionCoordinates) - 1:
                 self.regionCoordinates.append(a_targetcoords)
                 break
+
+    #TODO: Add removecoord() method.
 
     #TODO: Add sort() method. Would sort self.regionCoordinates
 
