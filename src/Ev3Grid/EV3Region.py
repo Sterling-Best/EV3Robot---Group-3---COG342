@@ -65,6 +65,30 @@ class EV3Region:
         """
         return self.__xMin
 
+    def set_xmin(self, a_targetxmin: int) -> None:
+        #TODO: Create UnitTests
+        """
+        Sets self.__xMin to the interger value of a_targetxmin.
+
+        Args:
+            a_targetxmin (int): Interger value that will replace current value of self._xMin
+
+        Returns:
+            None: Replaces value of self.__xMin with the value of a_targetxmin
+
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(4,6)
+        >>> aR = EV3Region(aC, 8)
+        >>> print(aR)
+        {0,0,7,7 | [(4,6)]}
+        >>> aR.get_xmin()
+        0
+        >>> aR.set_xmin(1)
+        >>> aR.get_xmin()
+        1
+        """
+        self.__xMin = a_targetxmin
+
     def get_xmax(self) -> int:
         # TODO: Create Unittests
         """
