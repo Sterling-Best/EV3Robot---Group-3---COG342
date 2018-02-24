@@ -233,9 +233,9 @@ class EV3Region:
         >>> aR = EV3Region(aC, 8)
         >>> print(aR)
         {0,0,7,7 | [(4,5)]}
-        >>> aR.ifcoordin(aC)
+        >>> aR.simplecoordcheck(aC)
         True
-        >>> aR.ifcoordin(bC)
+        >>> aR.simplecoordcheck(bC)
         False
         """
         if target in self.regionCoordinates:
