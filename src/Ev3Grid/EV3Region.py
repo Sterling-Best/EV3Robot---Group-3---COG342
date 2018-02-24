@@ -102,10 +102,34 @@ class EV3Region:
         >>> aR = EV3Region(aC, 7)
         >>> print(aR)
         {14,28,20,34 | [(18,34)]}
-        >>> aR.get_xmin()
-        14
+        >>> aR.get_xmax()
+        20
         """
         return self.__xMax
+
+    def set_xmax(self, a_targetxmax: int) -> None:
+        #TODO: Create Unittests
+        """
+        Replaces current self.__xMax value with interger value of a_targetxmax
+
+        Args:
+            a_targetxmax (int): Desired interger to replace value of self.__xMax
+
+        Returns:
+            None: Replaces current self.__xMax value with interger value of a_targetxmax
+
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(18,34)
+        >>> aR = EV3Region(aC, 7)
+        >>> print(aR)
+        {14,28,20,34 | [(18,34)]}
+        >>> aR.get_xmax()
+        20
+        >>> aR.set_xmax(24)
+        >>> aR.get_xmax()
+        24
+        """
+        self.__xMax = a_targetxmax
 
     def get_ymin(self) -> int:
         # TODO: Create Unittests
