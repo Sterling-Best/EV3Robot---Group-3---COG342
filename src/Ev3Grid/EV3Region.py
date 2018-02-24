@@ -215,18 +215,28 @@ class EV3Region:
         """
         self.__yMax = a_targetymax
 
-    def ifcoordin(self, target: Ev3Coordinates) -> bool:
+    def simplecoordcheck(self, target: Ev3Coordinates) -> bool:
         # TODO: Convert to Google Style Docstrings
         # TODO: Add docstring tests
         # TODO: Create Unittests
         """
-
         Check to see if the target coordinates in questionare in this region.
 
-        :param target:
-        :type target:
-        :return:
-        :rtype:
+        Args:
+            target (Ev3Coordinates): Coordinates to be checke
+
+        Returns:
+            bool: True if target is found in self.regionCoordinates
+
+        >>> aC = Ev3Coordinates.Ev3Coordinates(4,5)
+        >>> bC = Ev3Coordinates.Ev3Coordinates(21,34)
+        >>> aR = EV3Region(aC, 8)
+        >>> print(aR)
+        {0,0,7,7 | [(4,5)]}
+        >>> aR.ifcoordin(aC)
+        True
+        >>> aR.ifcoordin(bC)
+        False
         """
         if target in self.regionCoordinates:
             return True
