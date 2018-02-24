@@ -84,7 +84,6 @@ class EV3Region:
         return self.__xMax
 
     def get_ymin(self) -> int:
-        # TODO: Create Doctests
         # TODO: Create Unittests
         """
         Returns current value of self.__yMin
@@ -92,11 +91,17 @@ class EV3Region:
         Returns:
             int: Current value of self.__yMin
 
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(103,84)
+        >>> aR = EV3Region(aC, 16)
+        >>> print(aR)
+        {96,80,111,95 | [(103,84)]}
+        >>> aR.get_ymin()
+        80
         """
         return self.__yMin
 
     def get_ymax(self) -> int:
-        # TODO: Create Doctests
         # TODO: Create Unittests
         """
         Returns current value of self.__yMax
