@@ -149,6 +149,30 @@ class EV3Region:
         """
         return self.__yMin
 
+    def set_ymin(self, a_targetymin: int) -> None:
+        #TODO: Create Unittests
+        """
+        Replaces current self.__yMin value with interger value of a_targetymin
+
+        Args:
+            a_targetymin (int): Desired interger to replace value of self.__yMin
+
+        Returns:
+            None: Replaces current self.__yMin value with interger value of a_targetyMin
+
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(103,84)
+        >>> aR = EV3Region(aC, 16)
+        >>> print(aR)
+        {96,80,111,95 | [(103,84)]}
+        >>> aR.get_ymin()
+        80
+        >>> aR.set_ymin(42)
+        >>> aR.get_ymin()
+        42
+        """
+        self.__yMin = a_targetymin
+
     def get_ymax(self) -> int:
         # TODO: Create Unittests
         """
