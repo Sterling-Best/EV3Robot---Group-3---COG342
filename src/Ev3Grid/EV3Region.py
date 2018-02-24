@@ -174,7 +174,7 @@ class EV3Region:
         self.__yMin = a_targetymin
 
     def get_ymax(self) -> int:
-        # TODO: Create Unittests
+        #TODO: Create Unittests
         """
         Returns current value of self.__yMax
 
@@ -191,6 +191,29 @@ class EV3Region:
         """
         return self.__yMax
 
+    def set_ymax(self, a_targetymax: int) -> None:
+        #TODO: Create Unittests
+        """
+        Replaces current self.__yMax value with interger value of a_targetymax
+
+        Args:
+            a_targetymax (int): Desired interger to replace value of self.__yMax
+
+        Returns:
+            None: Replaces current self.__yMax value with interger value of a_targetyMax
+
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(7,22)
+        >>> aR = EV3Region(aC, 8)
+        >>> print(aR)
+        {0,16,7,23 | [(7,22)]}
+        >>> aR.get_ymax()
+        23
+        >>> aR.set_ymax(13)
+        >>> aR.get_ymax()
+        13
+        """
+        self.__yMax = a_targetymax
 
     def ifcoordin(self, target: Ev3Coordinates) -> bool:
         # TODO: Convert to Google Style Docstrings
