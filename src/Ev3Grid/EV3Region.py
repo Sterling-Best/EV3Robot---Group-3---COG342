@@ -155,6 +155,31 @@ class EV3Region:
                 elif rc < targetcoord:
                     self.regionCoordinates.insert(self.regionCoordinates.index(rc), targetcoord)
 
+    def __str__(self) -> str:
+        """
+        Returns string representation of Ev3Regon
+
+        Returns:
+            str: '{' represention region. Followed by region boundaries, then a list of coordinates within the region.
+
+        Doctest:
+        >>> aC = Ev3Coordinates.Ev3Coordinates(4,5)
+        >>> print(aC)
+        (4,5)
+        >>> aR = EV3Region(aC, 10)
+        >>> print(aR)
+        {0,0,9,9 | [(4,5)]}
+        """
+        regionBorders = str(self.get_xmin()) + ',' + str(self.get_ymin()) + ',' + str(self.get_xmax()) + ',' + str(self.get_ymax())
+        rCString = '['
+        for coord in self.regionCoordinates:
+            if str(self.regionCoordinates[-1]) == str(coord):
+                rCString = rCString + str(coord) + ']'
+            else:
+                rCString = rCString + str(coord) + ", "
+        return '{' + regionBorders + " | " + rCString + '}'
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
