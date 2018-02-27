@@ -25,9 +25,12 @@ class Ev3Global:
 
     #TODO: Create Export csv file
 
+    #TODO: Create collect all coordinates
+
     #TODO: Optional: Modify region size
     #Goes through all regions modifying their borders, and reassigning coordinates
     #This will bye tough
+
 
     #TODO: Create __str__
 

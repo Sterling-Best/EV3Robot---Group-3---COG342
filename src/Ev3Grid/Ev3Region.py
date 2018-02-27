@@ -297,7 +297,7 @@ class Ev3Region:
         >>> aR = Ev3Region(aC, 16)
         >>> aR.doescoordbelong(bC)
         True
-        >>> aR.doescoordbelong(cC)1
+        >>> aR.doescoordbelong(cC)
         False
         >>> aR.doescoordbelong(dC)
         False
@@ -350,7 +350,30 @@ class Ev3Region:
                 self.regionCoordinates.append(a_targetcoords)
                 break
 
-    #TODO: Add removecoord() method.
+    def removecoord(self, a_targetcoord: Ev3Coordinates = None) -> None:
+        """
+        Removes indicated Ev3Coordinates from self.__regionCoordinates
+        Args:
+            a_targetcoord (Ev3Coordinates): Target coordinate to be found and removed
+
+        Returns:
+            None: Removes target Ev3Coordinate from self.regionCoordinates
+
+        Doctest:
+        >>> aC = Ev3Coordinates(2,4)
+        >>> bC = Ev3Coordinates(6,7)
+        >>> cC = Ev3Coordinates(0,0)
+        >>> aR = Ev3Region(aC, 8)
+        >>> aR.addcoord(bC)
+        >>> aR.addcoord(cC)
+        >>> print(aR)
+        {0,0,7,7 | [(0,0), (2,4), (6,7)]}
+        >>> aR.removecoord(Ev3Coordinates(2,4))
+        >>> print(aR)
+        {0,0,7,7 | [(0,0), (6,7)]}
+        """
+        if a_targetcoord in self.regionCoordinates:
+            self.regionCoordinates.remove(a_targetcoord)
 
     #TODO: Add sort() method. Would sort self.regionCoordinates
 
