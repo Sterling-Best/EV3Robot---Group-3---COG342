@@ -1,12 +1,10 @@
-from src.Ev3Grid import Ev3Coordinates as Ev3Coordinates
+from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
 
-class EV3Region:
+class Ev3Region:
     """
     A section/region of the world grid. Storing specific
     """
 
-    # TODO: Convert to Google Style Docstrings -- http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
-    # TODO: Add docstring tests
     # TODO: Find Docstring Generator
 
     __xMax: int
@@ -25,8 +23,8 @@ class EV3Region:
             targetcoordinates (Ev3Coordinates): First Ev3Coordinate for the region
             targetregionsize (int): Size of the region that determines what coordinates should be put inside it.
 
-        >>> aC = Ev3Coordinates.Ev3Coordinates(0,0)
-        >>> aR = EV3Region(aC, 10)
+        >>> aC = Ev3Coordinates(0,0)
+        >>> aR = Ev3Region(aC, 10)
         >>> aR.get_xmin()
         0
         >>> aR.get_xmax()
@@ -43,7 +41,6 @@ class EV3Region:
         self.regionCoordinates = list()
         self.regionCoordinates.append(targetcoordinates)
 
-    #TODO: Add get_ and set_ methods for __xMax, __xMin, __yMax, __yMin
 
     def get_xmin(self) -> int:
         #TODO: Create Unittests
@@ -54,8 +51,8 @@ class EV3Region:
             int: Current value of self.__xMin
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(4,6)
-        >>> aR = EV3Region(aC, 8)
+        >>> aC = Ev3Coordinates(4,6)
+        >>> aR = Ev3Region(aC, 8)
         >>> print(aR)
         {0,0,7,7 | [(4,6)]}
         >>> aR.get_xmin()
@@ -75,8 +72,8 @@ class EV3Region:
             None: Replaces value of self.__xMin with the value of a_targetxmin
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(4,6)
-        >>> aR = EV3Region(aC, 8)
+        >>> aC = Ev3Coordinates(4,6)
+        >>> aR = Ev3Region(aC, 8)
         >>> print(aR)
         {0,0,7,7 | [(4,6)]}
         >>> aR.get_xmin()
@@ -96,8 +93,8 @@ class EV3Region:
             int: Current value of self.__xMax
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(18,34)
-        >>> aR = EV3Region(aC, 7)
+        >>> aC = Ev3Coordinates(18,34)
+        >>> aR = Ev3Region(aC, 7)
         >>> print(aR)
         {14,28,20,34 | [(18,34)]}
         >>> aR.get_xmax()
@@ -117,8 +114,8 @@ class EV3Region:
             None: Replaces current self.__xMax value with interger value of a_targetxmax
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(18,34)
-        >>> aR = EV3Region(aC, 7)
+        >>> aC = Ev3Coordinates(18,34)
+        >>> aR = Ev3Region(aC, 7)
         >>> print(aR)
         {14,28,20,34 | [(18,34)]}
         >>> aR.get_xmax()
@@ -138,8 +135,8 @@ class EV3Region:
             int: Current value of self.__yMin
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(103,84)
-        >>> aR = EV3Region(aC, 16)
+        >>> aC = Ev3Coordinates(103,84)
+        >>> aR = Ev3Region(aC, 16)
         >>> print(aR)
         {96,80,111,95 | [(103,84)]}
         >>> aR.get_ymin()
@@ -159,8 +156,8 @@ class EV3Region:
             None: Replaces current self.__yMin value with interger value of a_targetyMin
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(103,84)
-        >>> aR = EV3Region(aC, 16)
+        >>> aC = Ev3Coordinates(103,84)
+        >>> aR = Ev3Region(aC, 16)
         >>> print(aR)
         {96,80,111,95 | [(103,84)]}
         >>> aR.get_ymin()
@@ -180,8 +177,8 @@ class EV3Region:
             int: Current value of self.__yMax
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(7,22)
-        >>> aR = EV3Region(aC, 8)
+        >>> aC = Ev3Coordinates(7,22)
+        >>> aR = Ev3Region(aC, 8)
         >>> print(aR)
         {0,16,7,23 | [(7,22)]}
         >>> aR.get_ymax()
@@ -201,8 +198,8 @@ class EV3Region:
             None: Replaces current self.__yMax value with interger value of a_targetyMax
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(7,22)
-        >>> aR = EV3Region(aC, 8)
+        >>> aC = Ev3Coordinates(7,22)
+        >>> aR = Ev3Region(aC, 8)
         >>> print(aR)
         {0,16,7,23 | [(7,22)]}
         >>> aR.get_ymax()
@@ -224,9 +221,9 @@ class EV3Region:
         Returns:
             bool: True if target is found in self.regionCoordinates
 
-        >>> aC = Ev3Coordinates.Ev3Coordinates(4,5)
-        >>> bC = Ev3Coordinates.Ev3Coordinates(21,34)
-        >>> aR = EV3Region(aC, 8)
+        >>> aC = Ev3Coordinates(4,5)
+        >>> bC = Ev3Coordinates(21,34)
+        >>> aR = Ev3Region(aC, 8)
         >>> print(aR)
         {0,0,7,7 | [(4,5)]}
         >>> aR.simplecoordcheck(aC)
@@ -238,6 +235,8 @@ class EV3Region:
             return True
         else:
             return False
+
+
 
     def listcoordcheck(self, targetcoordinateslist: list) -> bool:
         # TODO: Create Unittests
@@ -254,32 +253,64 @@ class EV3Region:
             bool: True if all Ev3Coordinates in target list are found within self.regionCoordinates
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(4,5)
-        >>> bC = Ev3Coordinates.Ev3Coordinates(6,7)
-        >>> cC = Ev3Coordinates.Ev3Coordinates(7,7)
-        >>> aR = EV3Region(aC, 8)
+        >>> aC = Ev3Coordinates(4,5)
+        >>> bC = Ev3Coordinates(6,7)
+        >>> cC = Ev3Coordinates(7,7)
+        >>> aR = Ev3Region(aC, 8)
         >>> aR.addcoord(bC)
         >>> aR.addcoord(cC)
         >>> print(aR)
         {0,0,7,7 | [(4,5), (6,7), (7,7)]}
-        >>> dC = Ev3Coordinates.Ev3Coordinates(4,5)
-        >>> eC = Ev3Coordinates.Ev3Coordinates(7,7)
+        >>> dC = Ev3Coordinates(4,5)
+        >>> eC = Ev3Coordinates(7,7)
         >>> aC == dC
         True
         >>> aL = [dC,eC]
-        >>> fC = Ev3Coordinates.Ev3Coordinates(8,4)
+        >>> fC = Ev3Coordinates(8,4)
         >>> bL = aL + [fC]
         >>> aR.listcoordcheck(aL)
         True
         >>> aR.listcoordcheck(bL)
         False
-
         """
         for targetcoord in targetcoordinateslist:
             if targetcoord not in self.regionCoordinates:
                 return False
         return True
 
+    def doescoordbelong(self, a_targetcoord: Ev3Coordinates) -> bool:
+        """
+        Check to see if coord belong in this region, based on axis border values.
+
+        Args:
+            a_targetcoord (EV3Coordinates): Ev3Coordinate to be check if it is valid for current region
+
+        Returns:
+            bool: True if Ev3Coordinate is value for current region based on axis border values.
+
+        Doctest:
+        >>> aC = Ev3Coordinates(4,5)
+        >>> bC = Ev3Coordinates(7,7)
+        >>> cC = Ev3Coordinates(17,32)
+        >>> dC = Ev3Coordinates(14, 21)
+        >>> eC = Ev3Coordinates(21, 14)
+        >>> aR = Ev3Region(aC, 16)
+        >>> aR.doescoordbelong(bC)
+        True
+        >>> aR.doescoordbelong(cC)1
+        False
+        >>> aR.doescoordbelong(dC)
+        False
+        >>> aR.doescoordbelong(eC)
+        False
+        """
+        if self.get_xmin() <= a_targetcoord.get_xcoordinate() <= self.get_xmax():
+            if self.get_ymin() <= a_targetcoord.get_ycoordinate() <= self.get_ymax():
+                return True
+            else:
+                return False
+        else:
+            return False
     def addcoord(self, a_targetcoords: Ev3Coordinates) -> None:
         # TODO: Create Unittests
         """
@@ -293,11 +324,11 @@ class EV3Region:
             None: Adds new coordinate to self.regionCoordinates into proper place.
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(4,12)
-        >>> bC = Ev3Coordinates.Ev3Coordinates(5,13)
-        >>> cC = Ev3Coordinates.Ev3Coordinates(14,2)
-        >>> dC = Ev3Coordinates.Ev3Coordinates(5,8)
-        >>> aR = EV3Region(aC, 16)
+        >>> aC = Ev3Coordinates(4,12)
+        >>> bC = Ev3Coordinates(5,13)
+        >>> cC = Ev3Coordinates(14,2)
+        >>> dC = Ev3Coordinates(5,8)
+        >>> aR = Ev3Region(aC, 16)
         >>> print (aR)
         {0,0,15,15 | [(4,12)]}
         >>> aR.addcoord(bC)
@@ -326,8 +357,6 @@ class EV3Region:
     #TODO: Add rich comparison metods.
 
     def __str__(self) -> str:
-        #TODO: Code Refacotr
-        #Code works but its using str() references to compare objects ratherthan the objects themselfs. Should be fixed.
         #TODO: Create Unittests
         """
         Returns string representation of Ev3Regon
@@ -336,10 +365,10 @@ class EV3Region:
             str: '{' represention region. Followed by region boundaries, then a list of coordinates within the region.
 
         Doctest:
-        >>> aC = Ev3Coordinates.Ev3Coordinates(4,5)
+        >>> aC = Ev3Coordinates(4,5)
         >>> print(aC)
         (4,5)
-        >>> aR = EV3Region(aC, 10)
+        >>> aR = Ev3Region(aC, 10)
         >>> print(aR)
         {0,0,9,9 | [(4,5)]}
         """
@@ -360,10 +389,3 @@ class EV3Region:
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
-
-
-
-
-
-

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="" />
+    <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Ev3Grid/EV3Region.py" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/EV3Robot$Test.coverage" NAME="Test Coverage Results" MODIFIED="1518912832902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/EV3Robot$EV3Region.coverage" NAME="EV3Region Coverage Results" MODIFIED="1519511427052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
+    <SUITE FILE_PATH="coverage/EV3Robot$EV3Region.coverage" NAME="EV3Region Coverage Results" MODIFIED="1519704862602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
     <SUITE FILE_PATH="coverage/EV3Robot$Ev3Coordinates.coverage" NAME="Ev3Coordinates Coverage Results" MODIFIED="1519511419492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
   </component>
   <component name="DatabaseView">
@@ -31,18 +35,28 @@
       <file leaf-file-name="Ev3Coordinates.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2310">
+            <state relative-caret-position="6258">
               <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EV3Region.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+      <file leaf-file-name="Ev3Region.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-269">
-              <caret line="241" column="66" lean-forward="false" selection-start-line="241" selection-start-column="66" selection-end-line="241" selection-end-column="66" />
+            <state relative-caret-position="379">
+              <caret line="384" column="59" lean-forward="true" selection-start-line="384" selection-start-column="59" selection-end-line="384" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ev3Global.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,6 +103,8 @@
         <option value="$PROJECT_DIR$/Ev3Grid/EV3Region.py" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/EV3Region.py" />
+        <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" />
+        <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py" />
       </list>
     </option>
   </component>
@@ -133,7 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,14 +172,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.lastSelected" value="configurable.group.tools" />
     <property name="options.splitter.main.proportions" value="0.32666665" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -199,7 +215,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="EV3Robot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Ev3Grid/EV3Region.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\methl\Documents\#COG342\EV3Robot\src\Ev3Grid\Ev3Region.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -285,6 +301,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.49739584" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23845327" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -294,7 +311,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.49739584" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -342,6 +358,86 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1974">
+          <caret line="94" column="16" lean-forward="true" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6258">
+          <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6111">
+          <caret line="291" column="16" lean-forward="false" selection-start-line="291" selection-start-column="16" selection-end-line="291" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6258">
+          <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6111">
+          <caret line="291" column="16" lean-forward="false" selection-start-line="291" selection-start-column="16" selection-end-line="291" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -350,7 +446,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6174">
           <caret line="294" column="17" lean-forward="false" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
@@ -398,7 +494,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6930">
           <caret line="330" column="47" lean-forward="false" selection-start-line="330" selection-start-column="47" selection-end-line="330" selection-end-column="47" />
@@ -430,7 +526,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6048">
           <caret line="288" column="77" lean-forward="false" selection-start-line="288" selection-start-column="77" selection-end-line="288" selection-end-column="77" />
@@ -462,7 +558,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="82" lean-forward="true" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
@@ -478,7 +574,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1659">
           <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
@@ -526,7 +622,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1491">
           <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
@@ -550,7 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
           <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
@@ -574,7 +670,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
@@ -614,7 +710,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
@@ -648,16 +744,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2310">
+        <state relative-caret-position="6258">
           <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/EV3Region.py">
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269">
-          <caret line="241" column="66" lean-forward="false" selection-start-line="241" selection-start-column="66" selection-end-line="241" selection-end-column="66" />
+        <state relative-caret-position="294">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="384" column="59" lean-forward="true" selection-start-line="384" selection-start-column="59" selection-end-line="384" selection-end-column="59" />
           <folding />
         </state>
       </provider>
