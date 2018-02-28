@@ -341,14 +341,8 @@ class Ev3Region:
         >>> print(aR)
         {0,0,15,15 | [(4,12), (5,8), (5,13), (14,2)]}
         """
-        for rc in self.regionCoordinates:
-            if rc > a_targetcoords:
-                ref = self.regionCoordinates.index(rc)
-                self.regionCoordinates.insert(ref, a_targetcoords)
-                break
-            elif a_targetcoords > rc and self.regionCoordinates.index(rc) == len(self.regionCoordinates) - 1:
-                self.regionCoordinates.append(a_targetcoords)
-                break
+        self.regionCoordinates.append(a_targetcoords)
+        self.sort()
 
     def removecoord(self, a_targetcoord: Ev3Coordinates = None) -> None:
         """
@@ -375,7 +369,46 @@ class Ev3Region:
         if a_targetcoord in self.regionCoordinates:
             self.regionCoordinates.remove(a_targetcoord)
 
-    #TODO: Add sort() method. Would sort self.regionCoordinates
+    def sort(self) -> None:
+        """
+        Sorts the self.regionCoordinates list in order of least to greatest
+
+        Returns:
+            None: Sorts self.regionCoordinates in order of least to greatest.
+
+        Doctests:
+        >>> aC = Ev3Coordinates(0,0)
+        >>> aR = Ev3Region(aC, 8)
+        >>> aR.sort()
+        >>> print (aR)
+        {0,0,7,7 | [(0,0)]}
+        >>> bC = Ev3Coordinates(5,4)
+        >>> aR.addcoord(bC)
+        >>> cC = Ev3Coordinates(3,4)
+        >>> aR.regionCoordinates.append(cC)
+        >>> print (aR)
+        {0,0,7,7 | [(0,0), (5,4), (3,4)]}
+        >>> aR.sort()
+        >>> print (aR)
+        {0,0,7,7 | [(0,0), (3,4), (5,4)]}
+        """
+        newlist = []
+        if len(self.regionCoordinates) == 1:
+            newlist.append(self.regionCoordinates[0])
+        else:
+            for coord in self.regionCoordinates:
+                if len(newlist) == 0:
+                    newlist.append(coord)
+                else:
+                    for item in newlist:
+                        if item > coord:
+                            newlist.insert(newlist.index(item), coord)
+                            break
+                        elif coord > item and newlist.index(item) == len(
+                            newlist) - 1:
+                            newlist.append(coord)
+                            break
+        self.regionCoordinates = newlist
 
     #TODO: Add rich comparison metods.
 
