@@ -564,6 +564,39 @@ class Ev3Region:
             return False
 
     #TODO: __gt__
+    def __gt__(self, a_other: 'Ev3Region') -> bool:
+        """
+        Determines whether self is greater than or equal to another Ev3Region.
+
+        Args:
+            a_other (Ev3Region): Ev3Region to be compared to self
+
+        Returns:
+            bool: True if self is greater than or equal to target Ev3Region
+
+        Doctests:
+        >>> aR = Ev3Region(Ev3Coordinates(0,0), 8)
+        >>> bR = Ev3Region(Ev3Coordinates(7,7), 8)
+        >>> cR = Ev3Region(Ev3Coordinates(13,56), 8)
+        >>> dR = Ev3Region(Ev3Coordinates(-16,-72), 8)
+        >>> aR > bR
+        False
+        >>> aR > cR
+        False
+        >>> cR > aR
+        True
+        >>> aR > dR
+        True
+        >>> dR > aR
+        False
+        """
+        if self.get_xmin() > a_other.get_xmin():
+            return True
+        elif self.get_xmin() >= a_other.get_xmin() and self.get_ymin() > a_other.get_ymin():
+            return True
+        else:
+            return False
+
 
     #String Represetnation of Ev3Region
     def __str__(self) -> str:
