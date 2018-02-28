@@ -411,7 +411,7 @@ class Ev3Region:
                             break
         self.regionCoordinates = newlist
 
-    #TODO: __lt__
+    #Rich Comparisons
     def __lt__(self, a_other: 'Ev3Region') -> bool:
         """
         Compare self and another Ev3Region and determine if self is less than other.
@@ -444,8 +444,35 @@ class Ev3Region:
         else:
             return False
 
+    def __le__(self, a_other: 'Ev3Region') -> bool:
+        """
+        Compare self and another Ev3Region and determine if self is less or equal to other.
+        Args:
+            a_other (Ev3Region): Ev3Region being compared to self.
 
-    #TODO: __le__
+        Returns:
+            bool: True if self is less than or equal to a_other.
+
+        Doctests:
+        >>> aR = Ev3Region(Ev3Coordinates(0,0), 8)
+        >>> bR = Ev3Region(Ev3Coordinates(7,7), 8)
+        >>> cR = Ev3Region(Ev3Coordinates(-7,-12), 8)
+        >>> dR = Ev3Region(Ev3Coordinates(15,7), 8)
+        >>> aR <= bR
+        True
+        >>> aR < cR
+        False
+        >>> cR < aR
+        True
+        >>> aR < dR
+        True
+        >>> dR < aR
+        False
+        """
+        if self.get_xmin() <= a_other.get_xmin() and self.get_ymin() <= a_other.get_ymin():
+            return True
+        else:
+            return False
 
     def __eq__(self, a_other: 'Ev3Region') -> bool:
         """
