@@ -12,6 +12,7 @@ class Ev3Region:
     __yMax: int
     __yMin: int
 
+    #TODO: Convert regionCoordinates to 'private' variable
     regionCoordinates: list
 
     def __init__(self, targetcoordinates : Ev3Coordinates, targetregionsize: int):
@@ -235,7 +236,7 @@ class Ev3Region:
         else:
             return False
 
-    def listcoordcheck(self, targetcoordinateslist: list) -> bool:
+    def listcoordcheck(self, a_targetcoordinateslist: list) -> bool:
         # TODO: Create Unittests
         """
         Check to see if all EV3Coordinates in a list are within the region. If even one Ev3Coordinates object is not
@@ -244,7 +245,7 @@ class Ev3Region:
         Note: The reverse is not true, in that not all Ev3Coordinates in a region need to be in the list.
 
         Args:
-            targetcoordinateslist (list): List of Ev3Coordinates that should in in regionCoordinates
+            a_targetcoordinateslist (list): List of Ev3Coordinates that should in in regionCoordinates
 
         Returns:
             bool: True if all Ev3Coordinates in target list are found within self.regionCoordinates
@@ -270,7 +271,7 @@ class Ev3Region:
         >>> aR.listcoordcheck(bL)
         False
         """
-        for targetcoord in targetcoordinateslist:
+        for targetcoord in a_targetcoordinateslist:
             if targetcoord not in self.regionCoordinates:
                 return False
         return True
@@ -415,6 +416,32 @@ class Ev3Region:
     #TODO: __le__
 
     #TODO: __eq__
+    def __eq__(self, a_other: 'Ev3Region') -> bool:
+        """
+        Compare self and another Ev3Region, and determine if they are equal, iff border values of region are the same.
+
+        Args:
+            a_other (Ev3Region): Ev3Region being compared.
+
+        Returns:
+            bool: True if all border vales of self and other Ev3Region are the same.
+
+        Doctests:
+        >>> aR = Ev3Region(Ev3Coordinates(2,3), 16)
+        >>> bR = Ev3Region(Ev3Coordinates(7,9), 16)
+        >>> cR = Ev3Region(Ev3Coordinates(21,26), 16)
+        >>> aR == bR
+        True
+        >>> aR == cR
+        False
+        """
+        if self.get_xmin() == a_other.get_xmin() and self.get_ymin() == a_other.get_xmin():
+            if self.get_xmax() == a_other.get_xmax() and self.get_ymax() == a_other.get_ymax():
+                return True
+            else:
+                return False
+        else:
+            return False
 
     #TODO: __ne__
 
