@@ -41,7 +41,6 @@ class Ev3Region:
         self.regionCoordinates = list()
         self.regionCoordinates.append(targetcoordinates)
 
-
     def get_xmin(self) -> int:
         #TODO: Create Unittests
         """
@@ -236,8 +235,6 @@ class Ev3Region:
         else:
             return False
 
-
-
     def listcoordcheck(self, targetcoordinateslist: list) -> bool:
         # TODO: Create Unittests
         """
@@ -311,6 +308,7 @@ class Ev3Region:
                 return False
         else:
             return False
+
     def addcoord(self, a_targetcoords: Ev3Coordinates) -> None:
         # TODO: Create Unittests
         """
@@ -341,6 +339,7 @@ class Ev3Region:
         >>> print(aR)
         {0,0,15,15 | [(4,12), (5,8), (5,13), (14,2)]}
         """
+        #TODO: Add exception if the coordinate is already in the region, or not valid for this region
         self.regionCoordinates.append(a_targetcoords)
         self.sort()
 
@@ -366,6 +365,7 @@ class Ev3Region:
         >>> print(aR)
         {0,0,7,7 | [(0,0), (6,7)]}
         """
+        #TODO: Raise exception if the Ev3Coordinates are not found
         if a_targetcoord in self.regionCoordinates:
             self.regionCoordinates.remove(a_targetcoord)
 
@@ -410,7 +410,17 @@ class Ev3Region:
                             break
         self.regionCoordinates = newlist
 
-    #TODO: Add rich comparison metods.
+    #TODO: __lt__
+
+    #TODO: __le__
+
+    #TODO: __eq__
+
+    #TODO: __ne__
+
+    #TODO: __ge__
+
+    #TODO: __gt__
 
     def __str__(self) -> str:
         #TODO: Create Unittests
@@ -428,6 +438,7 @@ class Ev3Region:
         >>> print(aR)
         {0,0,9,9 | [(4,5)]}
         """
+        #TODO: Find out why rcstring assignments are throwing up formating erors
         regionborders = str(self.get_xmin()) + ',' + str(self.get_ymin()) + ',' + str(self.get_xmax()) + ',' + str(self.get_ymax())
         rcstring = '['
         if len(self.regionCoordinates) > 1:
