@@ -414,6 +414,7 @@ class Ev3Region:
     #Rich Comparisons
     def __lt__(self, a_other: 'Ev3Region') -> bool:
         """
+        <
         Compare self and another Ev3Region and determine if self is less than other.
         Args:
             a_other (Ev3Region): Ev3Region being compared to self.
@@ -446,6 +447,7 @@ class Ev3Region:
 
     def __le__(self, a_other: 'Ev3Region') -> bool:
         """
+        <=
         Compare self and another Ev3Region and determine if self is less or equal to other.
         Args:
             a_other (Ev3Region): Ev3Region being compared to self.
@@ -476,6 +478,7 @@ class Ev3Region:
 
     def __eq__(self, a_other: 'Ev3Region') -> bool:
         """
+        ==
         Compare self and another Ev3Region, and determine if they are equal, iff border values of region are the same.
 
         Args:
@@ -503,6 +506,7 @@ class Ev3Region:
 
     def __ne__(self, a_other: 'Ev3Region') -> bool:
         """
+        !=
         Compare self and another Ev3Region, and determine if they are not  equal, if any of the border values are not the same.
 
         Args:
@@ -528,10 +532,40 @@ class Ev3Region:
         else:
             return True
 
-    #TODO: __ge__
+    def __ge__(self, a_other: 'Ev3Region') -> bool:
+        """
+        Comparing if self and other Ev3Region if they are greater than or equal to, based on border values
+
+        Args:
+            a_other (Ev3Region): Ev3Region being compared to self.
+
+        Returns:
+            bool: True if border values of slerf are greater than or equal to other.
+
+        Doctests:
+        >>> aR = Ev3Region(Ev3Coordinates(0,0), 16)
+        >>> bR = Ev3Region(Ev3Coordinates(15,15), 16)
+        >>> cR = Ev3Region(Ev3Coordinates(31,31), 16)
+        >>> dR = Ev3Region(Ev3Coordinates(-10, -32), 16)
+        >>> aR >= bR
+        True
+        >>> aR >= cR
+        False
+        >>> cR >= aR
+        True
+        >>> aR >= dR
+        True
+        >>> dR >= aR
+        False
+        """
+        if self.get_xmin() >= a_other.get_xmin() and self.get_ymin() >= a_other.get_ymin():
+            return True
+        else:
+            return False
 
     #TODO: __gt__
 
+    #String Represetnation of Ev3Region
     def __str__(self) -> str:
         #TODO: Create Unittests
         """
