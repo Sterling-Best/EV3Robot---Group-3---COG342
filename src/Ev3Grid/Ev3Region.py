@@ -413,9 +413,9 @@ class Ev3Region:
 
     #TODO: __lt__
 
+
     #TODO: __le__
 
-    #TODO: __eq__
     def __eq__(self, a_other: 'Ev3Region') -> bool:
         """
         Compare self and another Ev3Region, and determine if they are equal, iff border values of region are the same.
@@ -444,6 +444,32 @@ class Ev3Region:
             return False
 
     #TODO: __ne__
+    def __ne__(self, a_other: 'Ev3Region') -> bool:
+        """
+        Compare self and another Ev3Region, and determine if they are not  equal, if any of the border values are not the same.
+
+        Args:
+            a_other (Ev3Region): Ev3Region being compared.
+
+        Returns:
+            bool: True if all border vales of self and other Ev3Region are not the same.
+
+        Doctests:
+        >>> aR = Ev3Region(Ev3Coordinates(0,0), 8)
+        >>> bR = Ev3Region(Ev3Coordinates(7,7), 8)
+        >>> cR = Ev3Region(Ev3Coordinates(104,87), 8)
+        >>> aR != bR
+        False
+        >>> aR != cR
+        True
+        """
+        if self.get_xmin() == a_other.get_xmin() and self.get_ymin() == a_other.get_xmin():
+            if self.get_xmax() == a_other.get_xmax() and self.get_ymax() == a_other.get_ymax():
+                return False
+            else:
+                return True
+        else:
+            return True
 
     #TODO: __ge__
 
