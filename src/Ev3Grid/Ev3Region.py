@@ -412,6 +412,37 @@ class Ev3Region:
         self.regionCoordinates = newlist
 
     #TODO: __lt__
+    def __lt__(self, a_other: 'Ev3Region') -> bool:
+        """
+        Compare self and another Ev3Region and determine if self is less than other.
+        Args:
+            a_other (Ev3Region): Ev3Region being compared to self.
+
+        Returns:
+            bool: True if self is less than a_other.
+
+        Doctests:
+        >>> aR = Ev3Region(Ev3Coordinates(12,13), 16)
+        >>> bR = Ev3Region(Ev3Coordinates(12,9), 16)
+        >>> cR = Ev3Region(Ev3Coordinates(21,26), 16)
+        >>> dR = Ev3Region(Ev3Coordinates(-2,-5), 16)
+        >>> aR < bR
+        False
+        >>> aR < cR
+        True
+        >>> cR < aR
+        False
+        >>> aR < dR
+        False
+        >>> dR < aR
+        True
+        """
+        if self.get_xmin() < a_other.get_xmin():
+            return True
+        elif self.get_xmin() <= a_other.get_xmin() and self.get_ymin() < a_other.get_ymin():
+            return True
+        else:
+            return False
 
 
     #TODO: __le__
@@ -443,7 +474,6 @@ class Ev3Region:
         else:
             return False
 
-    #TODO: __ne__
     def __ne__(self, a_other: 'Ev3Region') -> bool:
         """
         Compare self and another Ev3Region, and determine if they are not  equal, if any of the border values are not the same.
