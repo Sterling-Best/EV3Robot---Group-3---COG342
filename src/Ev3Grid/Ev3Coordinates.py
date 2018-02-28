@@ -367,8 +367,6 @@ class Ev3Coordinates:
             return False
 
     def __gt__(self, a_other: 'Ev3Coordinates') -> bool:
-        # TODO: Convert to Google Style Docstrings
-        # TODO: Add docstring tests
         # TODO: Create Unittests
         """
         >

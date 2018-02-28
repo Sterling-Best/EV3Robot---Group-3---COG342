@@ -277,6 +277,7 @@ class Ev3Region:
         return True
 
     def doescoordbelong(self, a_targetcoord: Ev3Coordinates) -> bool:
+        # TODO: Create Unittests
         """
         Check to see if coord belong in this region, based on axis border values.
 
@@ -345,6 +346,7 @@ class Ev3Region:
         self.sort()
 
     def removecoord(self, a_targetcoord: Ev3Coordinates = None) -> None:
+        # TODO: Create Unittests
         """
         Removes indicated Ev3Coordinates from self.__regionCoordinates
         Args:
@@ -371,6 +373,7 @@ class Ev3Region:
             self.regionCoordinates.remove(a_targetcoord)
 
     def sort(self) -> None:
+        # TODO: Create Unittests
         """
         Sorts the self.regionCoordinates list in order of least to greatest
 
@@ -413,6 +416,7 @@ class Ev3Region:
 
     #Rich Comparisons
     def __lt__(self, a_other: 'Ev3Region') -> bool:
+        # TODO: Create Unittests
         """
         <
         Compare self and another Ev3Region and determine if self is less than other.
@@ -446,6 +450,7 @@ class Ev3Region:
             return False
 
     def __le__(self, a_other: 'Ev3Region') -> bool:
+        # TODO: Create Unittests
         """
         <=
         Compare self and another Ev3Region and determine if self is less or equal to other.
@@ -477,6 +482,7 @@ class Ev3Region:
             return False
 
     def __eq__(self, a_other: 'Ev3Region') -> bool:
+        # TODO: Create Unittests
         """
         ==
         Compare self and another Ev3Region, and determine if they are equal, iff border values of region are the same.
@@ -505,6 +511,7 @@ class Ev3Region:
             return False
 
     def __ne__(self, a_other: 'Ev3Region') -> bool:
+        # TODO: Create Unittests
         """
         !=
         Compare self and another Ev3Region, and determine if they are not  equal, if any of the border values are not the same.
@@ -533,6 +540,7 @@ class Ev3Region:
             return True
 
     def __ge__(self, a_other: 'Ev3Region') -> bool:
+        # TODO: Create Unittests
         """
         Comparing if self and other Ev3Region if they are greater than or equal to, based on border values
 
@@ -563,8 +571,8 @@ class Ev3Region:
         else:
             return False
 
-    #TODO: __gt__
     def __gt__(self, a_other: 'Ev3Region') -> bool:
+        # TODO: Create Unittests
         """
         Determines whether self is greater than or equal to another Ev3Region.
 

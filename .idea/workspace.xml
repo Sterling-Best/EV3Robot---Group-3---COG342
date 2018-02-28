@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" />
       <change beforePath="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +34,8 @@
       <file leaf-file-name="Ev3Region.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="590" column="13" lean-forward="false" selection-start-line="590" selection-start-column="13" selection-end-line="590" selection-end-column="13" />
+            <state relative-caret-position="-4883">
+              <caret line="279" column="32" lean-forward="false" selection-start-line="279" selection-start-column="32" selection-end-line="279" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -43,8 +44,8 @@
       <file leaf-file-name="Ev3Coordinates.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1674">
-              <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
+            <state relative-caret-position="-6344">
+              <caret line="104" column="41" lean-forward="false" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -69,10 +70,10 @@
         <option value="$PROJECT_DIR$/Test" />
         <option value="$PROJECT_DIR$/Ev3Grid/EV3Zone.py" />
         <option value="$PROJECT_DIR$/Ev3Grid/EV3Region.py" />
-        <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/EV3Region.py" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" />
+        <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py" />
       </list>
     </option>
   </component>
@@ -672,16 +673,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
+        <state relative-caret-position="-6344">
+          <caret line="104" column="41" lean-forward="false" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="590" column="13" lean-forward="false" selection-start-line="590" selection-start-column="13" selection-end-line="590" selection-end-column="13" />
+        <state relative-caret-position="-4883">
+          <caret line="279" column="32" lean-forward="false" selection-start-line="279" selection-start-column="32" selection-end-line="279" selection-end-column="32" />
           <folding />
         </state>
       </provider>
