@@ -401,7 +401,7 @@ class Ev3Coordinates:
 
     #String Representations of Ev3Coordinates Class
 
-    def __str__(self) -> str :
+    def __repr__(self) -> str :
         # TODO: Create Unittests
         """
         String Representation of Ev3Coordinate object

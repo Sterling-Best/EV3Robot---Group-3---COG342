@@ -1,6 +1,7 @@
 from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
 from src.Ev3Grid.Ev3Region import Ev3Region
 
+
 class Ev3Global:
     """
     Contains all regions and coordinates during a robot's run.
@@ -17,7 +18,7 @@ class Ev3Global:
         self.globalCoordinate = []
         self.__regionSize = a_targetsize
 
-    #TODO: regionSize get and set
+    # TODO: regionSize get and set
     def get_regionsize(self) -> int:
         """
         Returns self.__regionSize current interger value
@@ -32,7 +33,7 @@ class Ev3Global:
         """
         return self.__regionSize
 
-    #TODO: Create add coordinate
+    # TODO: Create add coordinate
     def addcoord(self, a_targetcoord: Ev3Coordinates) -> None:
         """
         Adds an Ev3Coordinate to Global grid system. First determining if there is already a region it belong, and if so puts it there, and if not create a region for it.
@@ -103,19 +104,38 @@ class Ev3Global:
                             break
         self.globalCoordinate = newlist
 
-    #TODO: Create add region
+    def collectcoord(self) -> list:
+        """
+        Collects all coordinates in global grid and returns them.
 
-    #TODO: Create region search/return
+        Returns:
+            list: List of Ev3Coordinates that are currently in global grid.
 
-    #TODO: Create Export csv file
+        >>> aG = Ev3Global(16)
+        >>> aG.addcoord(Ev3Coordinates(2,4))
+        >>> aG.addcoord(Ev3Coordinates(0,0))
+        >>> aG.addcoord(Ev3Coordinates(8,6))
+        >>> aG.addcoord(Ev3Coordinates(-15,-12))
+        >>> aG.addcoord(Ev3Coordinates(-18, 22))
+        >>> aG.addcoord(Ev3Coordinates(13, -14))
+        >>> aG.addcoord(Ev3Coordinates(42, 69))
+        >>> print(aG)
+        <16 | [{-32,16,-17,31 | [(-18,22)]}, {-16,-16,-1,-1 | [(-15,-12)]}, {0,-16,15,-1 | [(13,-14)]}, {0,0,15,15 | [(0,0), (2,4), (8,6)]}, {32,64,47,79 | [(42,69)]}]>
+        >>> aTest = aG.collectcoord()
+        >>> print(str(aTest))
+        [(-18,22), (-15,-12), (13,-14), (0,0), (2,4), (8,6), (42,69)]
+        """
+        newlist = []
+        for region in self.globalCoordinate:
+            for coord in region.regionCoordinates:
+                newlist.append(coord)
+        return newlist
 
-    #TODO: Create collect all coordinates
+    # TODO: Optional: Modify region size
+    # Goes through all regions modifying their borders, and reassigning coordinates
+    # This will bye tough
 
-    #TODO: Optional: Modify region size
-    #Goes through all regions modifying their borders, and reassigning coordinates
-    #This will bye tough
-
-    #TODO: Create __str__
+    # TODO: Create __str__
     def __str__(self) -> str:
         """
         Generates string representation of Ev3Global
@@ -128,7 +148,7 @@ class Ev3Global:
         >>> print(aG)
         <16 | []>
         """
-        gstring = "<" + str(self.get_regionsize()) +  " | ["
+        gstring = "<" + str(self.get_regionsize()) + " | ["
         if len(self.globalCoordinate) == 0:
             gstring = gstring + "]"
         elif len(self.globalCoordinate) >= 1:
@@ -140,6 +160,8 @@ class Ev3Global:
                     gstring = gstring + ', '
         return gstring + ">"
 
+
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

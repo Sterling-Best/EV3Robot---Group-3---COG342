@@ -607,7 +607,7 @@ class Ev3Region:
 
 
     #String Represetnation of Ev3Region
-    def __str__(self) -> str:
+    def __repr__(self) -> str:
         #TODO: Create Unittests
         """
         Returns string representation of Ev3Regon
