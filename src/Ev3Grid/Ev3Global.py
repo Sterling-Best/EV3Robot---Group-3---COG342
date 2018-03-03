@@ -1,5 +1,6 @@
 from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
 from src.Ev3Grid.Ev3Region import Ev3Region
+from src.Ev3Grid.Ev3CsvExporter import Ev3CsvExporter
 
 
 class Ev3Global:
@@ -11,12 +12,15 @@ class Ev3Global:
 
     __regionSize: int
 
+    ev3Exporter: Ev3CsvExporter
+
     def __init__(self, a_targetsize: int) -> None:
         """
 
         """
         self.globalCoordinate = []
         self.__regionSize = a_targetsize
+        self.ev3Exporter = Ev3CsvExporter()
 
     # TODO: regionSize get and set
     def get_regionsize(self) -> int:
@@ -134,6 +138,15 @@ class Ev3Global:
     # TODO: Optional: Modify region size
     # Goes through all regions modifying their borders, and reassigning coordinates
     # This will bye tough
+
+    def exportcsv(self) -> None:
+        """
+        Exports csv of Ev3Coordinates using Ev3CsvExporter.
+
+        Returns:
+            None: Exports Ev3Coordinates in globalCoordinate as csv
+        """
+        self.ev3Exporter.createcsv(self)
 
     # TODO: Create __str__
     def __str__(self) -> str:
