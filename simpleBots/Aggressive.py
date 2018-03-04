@@ -48,7 +48,7 @@ try:
         rightSpeed = cSensorLeft.value() * _amplify
 
         motorLeft.run_forever(speed_sp=leftSpeed)
-        motorRight.run_forever(spped_sp=rightSpeed)
+        motorRight.run_forever(speed_sp=rightSpeed)
 
 except KeyboardInterrupt:
     pass
