@@ -9,15 +9,15 @@ where the influence of the source is scarcely felt.'
 (Braitenberg, 1987)
 """
     
-self.leftMotor = ev3.LargeMotor('outA')
-self.rightMotor = ev3.LargeMotor('outD')
-self.leftSensor = ev3.ColorSensor('out1')
-self.rightSensor = ev3.ColorSensor('out4')
+leftMotor = ev3.LargeMotor('outA')
+rightMotor = ev3.LargeMotor('outD')
+leftSensor = ev3.ColorSensor('out1')
+rightSensor = ev3.ColorSensor('out4')
 
-self.leftMotor.run_forever(speed_sp = 0)
-self.rightMotor.run_forever(speed_sp = 0)
-self.leftSensor.mode = 'COL-AMBIENT'
-self.rightSensor.mode = 'COL-AMBIENT'
+leftMotor.run_forever(speed_sp = 0)
+rightMotor.run_forever(speed_sp = 0)
+leftSensor.mode = 'COL-AMBIENT'
+rightSensor.mode = 'COL-AMBIENT'
 
 
 """
