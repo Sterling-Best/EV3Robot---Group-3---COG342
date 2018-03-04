@@ -47,7 +47,7 @@ try:
         leftIntensity = cSensorLeft.value()
         rightIntensity = cSensorRight.valeu()
         
-        if leftIntensity > _threshold || rightIntensity > _threshold:
+        if leftIntensity > _threshold or rightIntensity > _threshold:
             motorLeft.run_forever(rightIntensity * _amplify)
             motorRight.run_forever(leftIntensity * _amplify)
         else:
