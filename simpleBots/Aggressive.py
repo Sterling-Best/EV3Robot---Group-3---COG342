@@ -47,7 +47,10 @@ try:
         leftSpeed = cSensorRight.value() * _amplify
         rightSpeed = cSensorLeft.value() * _amplify
 
-        print('left speed: ' + leftSpeed + ' | right speed: ' + rightSpeed) 
+        if leftSpeed > 950:
+            leftSpeed = 950
+        if rightSpeed > 950:
+            rightSpeed = 950
 
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
