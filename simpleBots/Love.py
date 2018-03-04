@@ -45,7 +45,7 @@ try:
         btn.process()
         
         leftIntensity = cSensorLeft.value()
-        rightIntensity = cSensorRight.valeu()
+        rightIntensity = cSensorRight.value()
         
         if leftIntensity > _threshold:
             motorLeft.run_forever(speed_sp=0)
