@@ -13,9 +13,9 @@ motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
 
 colorSensorA = ev3.ColorSensor()
-assert s1.connected
+assert colorSensorA.connected
 colorSensorB = ev3.ColorSensor()
-assert s4.connected
+assert colorSensorB.connected
 
 
 btn = ev3.Button()
