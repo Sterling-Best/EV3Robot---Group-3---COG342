@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-from ev3dev.ev3 as ev3
+#! /usr/bin/env python3
+import ev3dev.ev3 as ev3
 
 """
 Coward is an algorithm based on Braitenberg's vehicle 2A.
@@ -12,16 +12,16 @@ where the influence of the source is scarcely felt.'
 mA = ev3.LargeMotor('outA')
 mD = ev3.LargeMotor('outD')
 
-#s1 = ev3.ColorSensor('out1')
-#assert s1.connected
-#s4 = ev3.ColorSensor('out4')
-#assert s4.connected
+s1 = ev3.ColorSensor('out1')
+assert s1.connected
+s4 = ev3.ColorSensor('out4')
+assert s4.connected
 
 
 btn = ev3.Button()
 
-#s1.mode = 'COL-AMBIENT'
-#s4.mode = 'COL-AMBIENT'
+s1.mode = 'COL-AMBIENT'
+s4.mode = 'COL-AMBIENT'
 
 def cleanUp():
     """
@@ -47,14 +47,11 @@ try:
     while True:
         btn.process()
         
-        #leftSpeed = s1.value()
-        #rightSpeed = s4.value()
+        leftSpeed = s1.value()
+        rightSpeed = s4.value()
         
-        mA.run_forever(speed_sp=100)
-        mD.run_forever(speed_sp=100)
-
-        #mA.run_forever(speed_sp=leftSpeed)
-        #mD.run_forever(speed_sp=rightSpeed)
+        mA.run_forever(speed_sp=leftSpeed)
+        mD.run_forever(speed_sp=rightSpeed)
 
 except KeyboardInterrup:
     pass
