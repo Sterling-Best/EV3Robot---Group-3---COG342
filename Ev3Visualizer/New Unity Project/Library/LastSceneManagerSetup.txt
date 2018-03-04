@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Display Grid.unity
-  isLoaded: 1
-  isActive: 1
