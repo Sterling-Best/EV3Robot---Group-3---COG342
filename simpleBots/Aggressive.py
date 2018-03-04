@@ -47,6 +47,8 @@ try:
         leftSpeed = cSensorRight.value() * _amplify
         rightSpeed = cSensorLeft.value() * _amplify
 
+        print('left speed: ' + leftSpeed + ' | right speed: ' + rightSpeed) 
+
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
 finally:
