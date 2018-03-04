@@ -26,11 +26,14 @@ Set the speed of each motor to the value of the intensity each
 sensor is detecting.
 Hit the back button to stop the program.
 """
-exitBtn = Button()
+btn = Button()
 
-while exitBtn.on_backspace() == False:
-    leftMotor.speed_sp = leftSensor.value()
-    rightMotor.speed_sp = rightSensor.value()
+while True:
+    if btn.any(): 
+        break
+    else: 
+        leftMotor.speed_sp = leftSensor.value()
+        rightMotor.speed_sp = rightSensor.value()
 
 leftMotor.stop()
 rightMotor.stop()
