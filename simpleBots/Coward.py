@@ -2,14 +2,14 @@
 import ev3dev.ev3 as ev3
 
 """
-Coward is an algorithm based on Braitenberg's vehicle 2A.
+Coward is based on Braitenberg's vehicle 2A.
 It should 'become restless in the vicinity of sources
 avoiding them, escaping until it safely reaches a place
 where the influence of the source is scarcely felt.' 
 (Braitenberg, 1987)
 """
 
-_amplify = 50
+_amplify = 10
     
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
@@ -38,8 +38,7 @@ btn.on_backspace = btnStop
 
 """
 Attach leftMotor to leftSensor and rightMotor to rightSensor.
-Set the speed of each motor to the value of the intensity each
-sensor is detecting.
+Set the speed of each motor to the value of the intensity * _amplify.
 Hit the back button to stop the program.
 """
 try:
@@ -48,11 +47,6 @@ try:
         
         leftSpeed = cSensorLeft.value() * _amplify
         rightSpeed = cSensorRight.value() * _amplify
-        
-        if leftSpeed > 950:
-            leftSpeed = 950
-        if rightSpeed > 950:
-            rightSpeed = 950
         
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)

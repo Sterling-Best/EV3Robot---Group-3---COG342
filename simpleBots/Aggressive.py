@@ -2,13 +2,13 @@
 import ev3dev.ev3 as ev3
 
 """
-Aggressive is an algorithm based on Braitenberg's vehivle 2B.
+Aggressive is based on Braitenberg's vehicle 2B.
 It should be 'excited by the presence of sources, but resolutely
 turn towards them and hit them with high velocity, as if it wanted
 to destroy them.' (Braitenberg, 1987)
 """
 
-_amplify = 50
+_amplify = 10
 
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
@@ -36,8 +36,7 @@ btn.on_backspace = btnStop
 
 """
 Attach leftMotor to cSensorRight and rightMotor to cSensorLeft.
-Set speed of each motor to the value of the intensity each sensor
-is detecting.
+Set speed of each motor to the value of the intensity * _amplify.
 Hit back button to stop program.
 """
 try:
@@ -46,11 +45,6 @@ try:
         
         leftSpeed = cSensorRight.value() * _amplify
         rightSpeed = cSensorLeft.value() * _amplify
-
-        if leftSpeed > 950:
-            leftSpeed = 950
-        if rightSpeed > 950:
-            rightSpeed = 950
 
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)

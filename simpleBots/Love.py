@@ -2,9 +2,9 @@
 import ev3dev.ev3 as ev3
 
 """
-Explore is based on Braitenberg's vehicle 3B.
-'It likes the nearby source all right, but keeps an eye
-open for other, perhaps stronger sources.' (Braitenberg, 1987)
+Love is based on Braitenberg's vehicle 3A.
+It will 'stay close by in quiet admiration from the time
+it spots the source to all future time.' (Braitenberg, 1987)
 """
 
 _amplify = 10
@@ -36,8 +36,8 @@ btn.on_backspace = btnStop
 
 """
 Attach leftMotor to cSensorLeft and rightMotor to cSensorRight.
-If the value of either sensor is above _threshold implement Coward,
-otherwise implement Aggressive.
+If the value of either sensor is above _threshold stop the respective
+motor, otherwise set speed of motor to intensity * _amplify.
 Hit back button to stop program.
 """
 try:
@@ -47,13 +47,16 @@ try:
         leftIntensity = cSensorLeft.value()
         rightIntensity = cSensorRight.valeu()
         
-        if leftIntensity > _threshold || rightIntensity > _threshold:
-            motorLeft.run_forever(rightIntensity * _amplify)
-            motorRight.run_forever(leftIntensity * _amplify)
+        if leftIntensity > _threshold:
+            motorLeft.run_forever(speed_sp=0)
         else:
             lSpeed = 100 - leftIntensity
+            motorLeft.run_forever(lSpeed * _amplify)
+
+        if rightIntensity > _threshold:
+            motorRight.run_forever(speed_sp=0)
+        else:
             rSpeed = 100 - rightIntensity
-            motorLeft.run_forever(lspeed * _amplify)
-            morotRight.run_forever(rspeed * _amplify)
+            motorRight.run_forever(rSpeed * _amplify)
 finally:
     cleanUp()
