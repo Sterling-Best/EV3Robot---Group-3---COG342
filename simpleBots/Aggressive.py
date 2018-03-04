@@ -8,7 +8,7 @@ turn towards them and hit them with high velocity, as if it wanted
 to destroy them.' (Braitenberg, 1987)
 """
 
-_amplify = 10
+_amplify = 100
 
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outB')
@@ -49,6 +49,7 @@ try:
 
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(spped_sp=rightSpeed)
+
 except KeyboardInterrupt:
     pass
 finally:

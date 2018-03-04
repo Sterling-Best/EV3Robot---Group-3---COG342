@@ -9,14 +9,13 @@ where the influence of the source is scarcely felt.'
 (Braitenberg, 1987)
 """
 
-_amplify = 10
+_amplify = 100
     
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
 
 cSensorLeft = ev3.ColorSensor('in1')
 cSensorRight = ev3.ColorSensor('in4')
-
 
 btn = ev3.Button()
 
