@@ -9,26 +9,29 @@ where the influence of the source is scarcely felt.'
 (Braitenberg, 1987)
 """
     
-mA = ev3.LargeMotor('outA')
-mD = ev3.LargeMotor('outD')
+motorLeft = ev3.LargeMotor('outA')
+motorRight = ev3.LargeMotor('outD')
 
-s1 = ev3.ColorSensor('out1')
+colorSensorA = ev3.ColorSensor()
 assert s1.connected
-s4 = ev3.ColorSensor('out4')
+colorSensorB = ev3.ColorSensor()
 assert s4.connected
 
 
 btn = ev3.Button()
 
-s1.mode = 'COL-AMBIENT'
-s4.mode = 'COL-AMBIENT'
+colorSensorA.mode = 'COL-AMBIENT'
+colorSensorB.mode = 'COL-AMBIENT'
+
+print(colorSensorA.address)
+print(colorSensorB.address)
 
 def cleanUp():
     """
     Stop all motors.
     """
-    mA.stop()
-    mD.stop()
+    motorLeft.stop()
+    motorRight.stop()
     exit()
 
 def btnStop(b):
@@ -50,8 +53,8 @@ try:
         leftSpeed = s1.value()
         rightSpeed = s4.value()
         
-        mA.run_forever(speed_sp=leftSpeed)
-        mD.run_forever(speed_sp=rightSpeed)
+        motorLeft.run_forever(speed_sp=leftSpeed)
+        motorRight.run_forever(speed_sp=rightSpeed)
 
 except KeyboardInterrup:
     pass
