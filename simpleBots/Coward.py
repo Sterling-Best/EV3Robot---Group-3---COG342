@@ -8,6 +8,8 @@ avoiding them, escaping until it safely reaches a place
 where the influence of the source is scarcely felt.' 
 (Braitenberg, 1987)
 """
+
+_amplify = 10
     
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
@@ -45,13 +47,13 @@ try:
     while True:
         btn.process()
         
-        leftSpeed = cSensorLeft.value()
-        rightSpeed = cSensorRight.value()
+        leftSpeed = cSensorLeft.value() * _amplify
+        rightSpeed = cSensorRight.value() * _amplify
         
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
 
-except KeyboardInterrup:
+except KeyboardInterrupt:
     pass
 finally:
     cleanUp()
