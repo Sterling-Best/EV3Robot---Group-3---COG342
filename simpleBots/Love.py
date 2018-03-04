@@ -51,12 +51,12 @@ try:
             motorLeft.run_forever(speed_sp=0)
         else:
             lSpeed = 100 - leftIntensity
-            motorLeft.run_forever(lSpeed * _amplify)
+            motorLeft.run_forever(speed_sp=lSpeed*_amplify)
 
         if rightIntensity > _threshold:
             motorRight.run_forever(speed_sp=0)
         else:
             rSpeed = 100 - rightIntensity
-            motorRight.run_forever(rSpeed * _amplify)
+            motorRight.run_forever(speed_sp=rSpeed*_amplify)
 finally:
     cleanUp()

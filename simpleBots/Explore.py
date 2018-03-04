@@ -48,12 +48,12 @@ try:
         rightIntensity = cSensorRight.value()
         
         if leftIntensity > _threshold or rightIntensity > _threshold:
-            motorLeft.run_forever(rightIntensity * _amplify)
-            motorRight.run_forever(leftIntensity * _amplify)
+            motorLeft.run_forever(speed_sp=rightIntensity*_amplify)
+            motorRight.run_forever(speed_sp=leftIntensity*_amplify)
         else:
             lSpeed = 100 - leftIntensity
             rSpeed = 100 - rightIntensity
-            motorLeft.run_forever(lSpeed * _amplify)
-            motorRight.run_forever(rSpeed * _amplify)
+            motorLeft.run_forever(speed_sp=lSpeed*_amplify)
+            motorRight.run_forever(speed_sp=rSpeed*_amplify)
 finally:
     cleanUp()
