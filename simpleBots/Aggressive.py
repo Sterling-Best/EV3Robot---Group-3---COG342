@@ -8,7 +8,7 @@ turn towards them and hit them with high velocity, as if it wanted
 to destroy them.' (Braitenberg, 1987)
 """
 
-_amplify = 100
+_amplify = 50
 
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')

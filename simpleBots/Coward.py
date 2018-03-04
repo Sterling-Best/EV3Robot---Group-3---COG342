@@ -9,7 +9,7 @@ where the influence of the source is scarcely felt.'
 (Braitenberg, 1987)
 """
 
-_amplify = 100
+_amplify = 50
     
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
@@ -48,6 +48,11 @@ try:
         
         leftSpeed = cSensorLeft.value() * _amplify
         rightSpeed = cSensorRight.value() * _amplify
+        
+        if leftSpeed > 950:
+            leftSpeed = 950
+        if rightSpeed > 950:
+            rightSpeed = 950
         
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
