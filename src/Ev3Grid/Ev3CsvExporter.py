@@ -7,14 +7,17 @@ class Ev3CsvExporter:
     Using data from given Ev3Global object, create an csv file of Ev3Coordinate Objects.
     """
 
+    fileDir: str
+
     def __init__(self):
         """"
         Initialization of Ev3CsvExporter object.
         """
+        self.fileDir = '../EV3Robot/out/csv/'
 
     def createcsv(self, a_targetglobal) -> None:
         """
-        Create csv from
+        Create .csv from global grid coordinates. Names .csv with current date and time to ensure its unique.
 
         Args:
             a_targetglobal (Ev3Global):
@@ -22,8 +25,10 @@ class Ev3CsvExporter:
         Returns:
             None: CSV file of Ev3Coordinates
         """
+
+        filestr = self.fileDir + self.datetimefilename() + '.csv'
         coordlist = a_targetglobal.collectcoord()
-        with open('../../out/csv/globalgrid.csv', 'w') as csvfile:
+        with open(self.fileDir + self.datetimefilename() + '.csv', 'w') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
             filewriter.writerow(["X", "Y"])
             for coord in coordlist:
