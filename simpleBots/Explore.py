@@ -9,6 +9,7 @@ open for other, perhaps stronger sources.' (Braitenberg, 1987)
 
 _amplify = 10
 _threshold = 20
+_maxIntensity = 50
 
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
@@ -51,8 +52,8 @@ try:
             motorLeft.run_forever(speed_sp=rightIntensity*_amplify)
             motorRight.run_forever(speed_sp=leftIntensity*_amplify)
         else:
-            lSpeed = 100 - leftIntensity
-            rSpeed = 100 - rightIntensity
+            lSpeed = _maxIntensity - leftIntensity
+            rSpeed = _maxIntensity - rightIntensity
             motorLeft.run_forever(speed_sp=lSpeed*_amplify)
             motorRight.run_forever(speed_sp=rSpeed*_amplify)
 finally:

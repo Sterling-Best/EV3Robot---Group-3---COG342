@@ -9,6 +9,7 @@ it spots the source to all future time.' (Braitenberg, 1987)
 
 _amplify = 10
 _threshold = 20
+_maxIntensity = 50
 
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
@@ -50,13 +51,13 @@ try:
         if leftIntensity > _threshold:
             motorLeft.run_forever(speed_sp=0)
         else:
-            lSpeed = 100 - leftIntensity
+            lSpeed = _maxIntensity - leftIntensity
             motorLeft.run_forever(speed_sp=lSpeed*_amplify)
 
         if rightIntensity > _threshold:
             motorRight.run_forever(speed_sp=0)
         else:
-            rSpeed = 100 - rightIntensity
+            rSpeed = _maxIntensity - rightIntensity
             motorRight.run_forever(speed_sp=rSpeed*_amplify)
 finally:
     cleanUp()
