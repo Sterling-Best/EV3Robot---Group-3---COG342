@@ -26,7 +26,7 @@ Set the speed of each motor to the value of the intensity each
 sensor is detecting.
 Hit the back button to stop the program.
 """
-btn = Button()
+btn = ev3.Button()
 
 while True:
     if btn.any(): 
