@@ -12,19 +12,14 @@ where the influence of the source is scarcely felt.'
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
 
-colorSensorA = ev3.ColorSensor()
-assert colorSensorA.connected
-colorSensorB = ev3.ColorSensor()
-assert colorSensorB.connected
+cSensorLeft = ev3.ColorSensor('in1')
+cSensorRight = ev3.ColorSensor('in4')
 
 
 btn = ev3.Button()
 
-colorSensorA.mode = 'COL-AMBIENT'
-colorSensorB.mode = 'COL-AMBIENT'
-
-print(colorSensorA.address)
-print(colorSensorB.address)
+cSensorLeft.mode = 'COL-AMBIENT'
+cSensorRight.mode = 'COL-AMBIENT'
 
 def cleanUp():
     """
@@ -50,8 +45,8 @@ try:
     while True:
         btn.process()
         
-        leftSpeed = s1.value()
-        rightSpeed = s4.value()
+        leftSpeed = cSensorLeft.value()
+        rightSpeed = cSensorRight.value()
         
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
