@@ -49,8 +49,5 @@ try:
 
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
-
-except KeyboardInterrupt:
-    pass
 finally:
     cleanUp()
