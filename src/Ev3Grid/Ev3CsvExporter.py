@@ -21,7 +21,7 @@ class Ev3CsvExporter:
             None: CSV file of Ev3Coordinates
         """
         coordlist = a_targetglobal.collectcoord()
-        with open('globalgrid.csv', 'w') as csvfile:
+        with open('../../out/csv/globalgrid.csv', 'w') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
             filewriter.writerow(["X", "Y"])
             for coord in coordlist:
