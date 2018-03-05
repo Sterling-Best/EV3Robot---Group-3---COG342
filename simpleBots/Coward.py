@@ -24,7 +24,7 @@ def btnStop(b) -> None:
         b:
 
     Returns:
-        None: stops motor and exits.
+        None: Stops motors and exits.
     """
     robot.stopMotors()
     exit()
@@ -43,7 +43,7 @@ def run() -> None:
     try:
         while True:
             btn.process()
- 
+
             robot.speedUp(leftMotor, robot.getSensorValue('left'))
             robot.speedUp(rightMotor, robot.getSensorValue('right'))
     finally:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import ev3dev.ev3 as ev3
+from Robot import Robot
 
 """
 Aggressive is based on Braitenberg's vehicle 2B.
@@ -8,45 +8,45 @@ turn towards them and hit them with high velocity, as if it wanted
 to destroy them.' (Braitenberg, 1987)
 """
 
-_amplify = 10
+robot = Robot(50)
 
-motorLeft = ev3.LargeMotor('outA')
-motorRight = ev3.LargeMotor('outD')
+btn = robot.getButtons()
 
-cSensorLeft = ev3.ColorSensor('in1')
-cSensorRight = ev3.ColorSensor('in4')
-
-btn = ev3.Button()
-
-cSensorLeft.mode = 'COL-AMBIENT'
-cSensorRight.mode = 'COL-AMBIENT'
-
-def cleanUp():
-    """
-    Stop all motors.
-    """
-    motorLeft.stop()
-    motorRight.stop()
-    exit()
+leftMotor = robot.getMotor('left')
+rightMotor = robot.getMotor('right')
 
 def btnStop(b):
-    cleanUp()
+    """
+    Stop the motors and exit program.
+
+    Args:
+        b:
+
+    Returns:
+        None: Stops motors and exits.
+    """
+    robot.stopMotors()
+    exit()
 
 btn.on_backspace = btnStop
 
-"""
-Attach leftMotor to cSensorRight and rightMotor to cSensorLeft.
-Set speed of each motor to the value of the intensity * _amplify.
-Hit back button to stop program.
-"""
-try:
-    while True:
-        btn.process()
-        
-        leftSpeed = cSensorRight.value() * _amplify
-        rightSpeed = cSensorLeft.value() * _amplify
+def run() -> None:
+    """
+    Attach leftMotor to cSensorRight and rightMotor to cSensorLeft.
+    Set speed of each motor to the value of the intensity * _amplify.
+    Hit back button to stop program.
 
-        motorLeft.run_forever(speed_sp=leftSpeed)
-        motorRight.run_forever(speed_sp=rightSpeed)
-finally:
-    cleanUp()
+    Returns:
+        None: continously run the robot, and check for button press.
+    """
+    try:
+        while True:
+            btn.process()
+
+            robot.speedUp(leftMotor, robot.getSensorValue('right'))
+            robot.speedUp(rightMotor, robot.getSensorValue('left'))
+    finally:
+        robot.stopMotors()
+
+if __name__ == "__main__":
+    run()

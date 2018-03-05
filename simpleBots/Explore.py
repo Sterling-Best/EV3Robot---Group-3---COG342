@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import ev3dev.ev3 as ev3
+from Robot import Robot
 
 """
 Explore is based on Braitenberg's vehicle 3B.
@@ -7,54 +7,55 @@ Explore is based on Braitenberg's vehicle 3B.
 open for other, perhaps stronger sources.' (Braitenberg, 1987)
 """
 
-_amplify = 10
-_threshold = 20
-_maxIntensity = 50
+__threshold = 20
 
-motorLeft = ev3.LargeMotor('outA')
-motorRight = ev3.LargeMotor('outD')
+robot = Robot(50)
 
-cSensorLeft = ev3.ColorSensor('in1')
-cSensorRight = ev3.ColorSensor('in4')
+leftMotor = robot.getMotor('left')
+rightMotor = robot.getMotor('right')
 
-btn = ev3.Button()
-
-cSensorLeft.mode = 'COL-AMBIENT'
-cSensorRight.mode = 'COL-AMBIENT'
-
-def cleanUp():
-    """
-    Stop all motors.
-    """
-    motorLeft.stop()
-    motorRight.stop()
-    exit()
+btn = robot.getButtons()
 
 def btnStop(b):
-    cleanUp()
+    """
+    Stop the motors and exit program.
+
+    Args:
+        b:
+
+    Returns:
+        None: stops motor and exits.
+    """
+    robot.stopMotors()
+    exit()
 
 btn.on_backspace = btnStop
 
-"""
-Attach leftMotor to cSensorLeft and rightMotor to cSensorRight.
-If the value of either sensor is above _threshold implement Coward,
-otherwise implement Aggressive.
-Hit back button to stop program.
-"""
-try:
-    while True:
-        btn.process()
-        
-        leftIntensity = cSensorLeft.value()
-        rightIntensity = cSensorRight.value()
-        
-        if leftIntensity > _threshold or rightIntensity > _threshold:
-            motorLeft.run_forever(speed_sp=rightIntensity*_amplify)
-            motorRight.run_forever(speed_sp=leftIntensity*_amplify)
-        else:
-            lSpeed = _maxIntensity - leftIntensity
-            rSpeed = _maxIntensity - rightIntensity
-            motorLeft.run_forever(speed_sp=lSpeed*_amplify)
-            motorRight.run_forever(speed_sp=rSpeed*_amplify)
-finally:
-    cleanUp()
+def run() -> None:
+    """
+    Attach leftMotor to cSensorLeft and rightMotor to cSensorRight.
+    If the value of either sensor is above _threshold implement Coward,
+    otherwise implement Aggressive.
+    Hit back button to stop program.
+
+    Returns:
+        None: continously run the robot and check for button press.
+    """
+    try:
+        while True:
+            btn.process()
+
+            leftIntensity = robot.getSensorValue('left')
+            rightIntensity = robot.getSensorValue('right')
+
+            if leftIntensity > __threshold or rightIntensity > __threshold:
+                robot.speedUp(leftMotor, leftIntensity)
+                robot.speedUp(rightMotor, rightIntensity)
+            else:
+                robot.slowDown(leftMotor, leftIntensity)
+                robot.slowDown(rightMotor, rightIntensity)
+    finally:
+        robot.stopMotors()
+
+if __name__ == "__main__":
+    run()
