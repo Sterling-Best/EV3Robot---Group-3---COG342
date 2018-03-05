@@ -1,8 +1,8 @@
 import ev3dev.ev3 as ev3
 
 class Robot:
-"""
-"""
+    """
+    """
 
     _amplify: int
     _threshold = 20
