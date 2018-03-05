@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEditor;
 
-public class DataPlotter : MonoBehaviour {
+
+public class DataPlotter : MonoBehaviour
+{
 
     public string inputfile;
 
@@ -16,8 +20,17 @@ public class DataPlotter : MonoBehaviour {
 
     public GameObject PointPrefab;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    [MenuItem("Select .csv")]
+    void Start()
+    {
+        //Texture2D texture = Selection.activeObject as Texture2D;
+        //if (texture == null)
+        //{
+        //    EditorUtility.DisplayDialog("Select Texture", "You must select a texture first!", "OK");
+        //    return;
+        //}
         pointList = CSVReader.Read(inputfile);
         Debug.Log(pointList);
         List<string> columnList = new List<string>(pointList[1].Keys);
@@ -26,15 +39,11 @@ public class DataPlotter : MonoBehaviour {
             Debug.Log("Column name is " + key);
         xName = columnList[columnx];
         yName = columnList[columny];
-        for (var i=0; i < pointList.Count; i++)
+        for (var i = 0; i < pointList.Count; i++)
         {
             float x = System.Convert.ToSingle(pointList[i][xName]);
             float y = System.Convert.ToSingle(pointList[i][yName]);
             Instantiate(PointPrefab, new Vector2(x, y), Quaternion.identity);
         }
-
-
-	}
-	
-
+    }
 }

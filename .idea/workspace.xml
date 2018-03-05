@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="" />
+    <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/.suo" afterPath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/.suo" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/Server/sqlite3/storage.ide" afterPath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/Server/sqlite3/storage.ide" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Assets/Scripts/DataPlotter.cs" afterPath="$PROJECT_DIR$/Ev3Visualizer/Assets/Scripts/DataPlotter.cs" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/CurrentLayout.dwlt" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/CurrentLayout.dwlt" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/assetDatabase3" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/52/52a206b72a8f4f749c28d8b18b42dd19" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/52/52a206b72a8f4f749c28d8b18b42dd19" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/68/6840ac8c31051714fb3c57a13bba8bf8" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/68/6840ac8c31051714fb3c57a13bba8bf8" />
+      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/ad/addccc6df22a4464eb1fededde79f492" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/ad/addccc6df22a4464eb1fededde79f492" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +25,7 @@
     <SUITE FILE_PATH="coverage/EV3Robot$Ev3Test.coverage" NAME="Ev3Test Coverage Results" MODIFIED="1520194668474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
     <SUITE FILE_PATH="coverage/EV3Robot$Ev3CsvExporter.coverage" NAME="Ev3CsvExporter Coverage Results" MODIFIED="1520194886624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
     <SUITE FILE_PATH="coverage/EV3Robot$EV3Region.coverage" NAME="EV3Region Coverage Results" MODIFIED="1519867927782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
-    <SUITE FILE_PATH="coverage/EV3Robot$Test.coverage" NAME="Test Coverage Results" MODIFIED="1520196354494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EV3Robot$Test.coverage" NAME="Test Coverage Results" MODIFIED="1520199523580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EV3Robot$Ev3Coordinates.coverage" NAME="Ev3Coordinates Coverage Results" MODIFIED="1519511419492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
     <SUITE FILE_PATH="coverage/EV3Robot$Ev3Global.coverage" NAME="Ev3Global Coverage Results" MODIFIED="1520195330853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Ev3Grid" />
   </component>
@@ -34,28 +46,28 @@
       <file leaf-file-name="Ev3Region.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
+            <state relative-caret-position="13440">
               <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="642" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ev3CsvExporter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ev3CsvExporter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3CsvExporter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="1197">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ev3Global.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ev3Global.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
+            <state relative-caret-position="294">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,7 +76,7 @@
       <file leaf-file-name="Test" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="483">
               <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding />
             </state>
@@ -160,6 +172,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,7 +201,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -747,34 +759,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="642" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
+        <state relative-caret-position="483">
           <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3CsvExporter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="1197">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13440">
+          <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="642" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
