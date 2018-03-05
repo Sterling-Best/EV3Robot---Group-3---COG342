@@ -1,55 +1,60 @@
+#!/usr/bin/env python3
 import ev3dev.ev3 as ev3
 
 class Robot:
     """
     """
 
-    _amplify: int
-    _threshold = 20
-    _maxIntensity = 50
-
-    motorLeft = ev3.LargeMotor('outA')
-    motorRight = ev3.LargeMotor('outD')
-
-    cSensorLeft = ev3.ColorSensor('in1')
-    cSensorRight = ev3.ColorSensor('in4')
+    __amplify = 1
+    __threshold = 20
+    __maxIntensity = 50
 
     def __init__(self, amplify: int) -> None:
         """
         """
-        self._amplify = amplify
+        self.__amplify = amplify
+        self.motorLeft = ev3.LargeMotor('outA')
+        self.motorRight = ev3.LargeMotor('outD')
+        self.cSensorLeft = ev3.ColorSensor('in1')
+        self.cSensorRight = ev3.ColorSensor('in4')
     
-    def speedUp(self, motor: str, speed: int) -> None:
+    def speedUp(self, motor, speed: int) -> None:
         """
         """
-        motorSpeed = speed * _amplify
-        if motor == 'left':
-            motorLeft.run_forever(speed_sp = speed * _amplify)
-        else:
-            motorRight.run_forever(speed_sp = speed * _amplify)
+        motorSpeed = speed * self.__amplify
+        motor.run_forever(speed_sp=motorSpeed)
         
-    def slowDown(self, motor: str, speed: int) -> None:
+    def slowDown(self, motor, speed: int) -> None:
         """
         """
-        motorSpeed = ( _max_intensity - speed) * _amplify
-        if motor == 'left':
-            motorLeft.run_forever(speed_sp=motorSpeed)
+        motorSpeed = (self.__maxIntensity - speed) * self.__amplify
+        motor.run_forever(speed_sp=motorSpeed)
+
+    def getMotor(self, side: str):
+        if side == 'left':
+            return self.motorLeft
         else:
-            motorRight.run_forever(speed_sp=motorSpeed)
+            return self.motorRight
+
     
-    def getSensorValue(self, sensor: str) -> int:
+    def getSensorValue(self, sensor) -> int:
         """
         """
         if sensor == 'left':
-            return cSensorLeft.value() 
+            return self.cSensorLeft.value() 
         else:
-            return cSensorRight.value()
+            return self.cSensorRight.value()
 
     def stopMotors(self) -> None:
         """
         """
-        motorLeft.stop()
-        motorRight.stop()
+        self.motorLeft.stop()
+        self.motorRight.stop()
+
+    def getButtons(self):
+        """
+        """
+        return ev3.Button()
 
     def __str(self) -> str:
         """

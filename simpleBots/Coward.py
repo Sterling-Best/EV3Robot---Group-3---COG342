@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-import ev3dev.ev3 as ev3
-import Robot
+from Robot import Robot
 
 """
 Coward is based on Braitenberg's vehicle 2A.
@@ -12,6 +11,10 @@ where the influence of the source is scarcely felt.'
 
 robot = Robot(50)
 
+btn = robot.getButtons()
+
+leftMotor = robot.getMotor('left')
+rightMotor = robot.getMotor('right')
 
 def btnStop(b):
     robot.stopMotors()
@@ -19,17 +22,21 @@ def btnStop(b):
 
 btn.on_backspace = btnStop
 
-
-"""
-Attach leftMotor to leftSensor and rightMotor to rightSensor.
-Set the speed of each motor to the value of the intensity * _amplify.
-Hit the back button to stop the program.
-"""
-try:
-    while True:
-        btn.process()
+def run():
+    """
+    Attach leftMotor to leftSensor and rightMotor to rightSensor.
+    Set the speed of each motor to the value of the intensity * _amplify.
+    Hit the back button to stop the program.
+    """
+    try:
+        while True:
+            btn.process()
         
-        robot.speedUp('left', robot.getSensorValue('left'))
-        robot.speedUp('right', robot.getSensorValue('right'))
-finally:
-    cleanUp()
+            robot.speedUp(leftMotor, robot.getSensorValue('left'))
+            robot.speedUp(rightMotor, robot.getSensorValue('right'))
+    finally:
+        robot.stopMotors()
+
+
+if __name__ == "__main__":
+    run()
