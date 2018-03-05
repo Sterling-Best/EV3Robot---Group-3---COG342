@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/simpleBots/Coward.py" afterPath="$PROJECT_DIR$/simpleBots/Coward.py" />
+      <change beforePath="$PROJECT_DIR$/simpleBots/Explore.py" afterPath="$PROJECT_DIR$/simpleBots/Explore.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,11 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Coward.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Coward.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleBots/Coward.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-324">
               <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Explore.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simpleBots/Explore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -140,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3CsvExporter.py" />
         <option value="$PROJECT_DIR$/simpleBots/Aggressive.py" />
         <option value="$PROJECT_DIR$/simpleBots/Coward.py" />
+        <option value="$PROJECT_DIR$/simpleBots/Explore.py" />
       </list>
     </option>
   </component>
@@ -434,13 +445,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6111">
@@ -795,6 +799,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleBots/Explore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
       </provider>
