@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/simpleBots/Explore.py" afterPath="$PROJECT_DIR$/simpleBots/Explore.py" />
+      <change beforePath="$PROJECT_DIR$/simpleBots/Love.py" afterPath="$PROJECT_DIR$/simpleBots/Love.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,11 +84,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Explore.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Explore.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleBots/Explore.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="412">
+              <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Love.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simpleBots/Love.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -151,6 +162,7 @@
         <option value="$PROJECT_DIR$/simpleBots/Aggressive.py" />
         <option value="$PROJECT_DIR$/simpleBots/Coward.py" />
         <option value="$PROJECT_DIR$/simpleBots/Explore.py" />
+        <option value="$PROJECT_DIR$/simpleBots/Love.py" />
       </list>
     </option>
   </component>
@@ -445,13 +457,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6111">
-          <caret line="291" column="16" lean-forward="false" selection-start-line="291" selection-start-column="16" selection-end-line="291" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6258">
@@ -805,8 +810,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simpleBots/Explore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state relative-caret-position="412">
+          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleBots/Love.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
           <folding />
         </state>
       </provider>

@@ -33,7 +33,7 @@ def cleanup() -> None:
     motorRight.stop()
     exit()
 
-def btnstop(a_b):
+def btnstop(a_b) -> None:
     #TODO: Complete Docstring
     """
 
