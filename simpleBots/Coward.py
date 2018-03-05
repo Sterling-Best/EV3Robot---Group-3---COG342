@@ -16,22 +16,34 @@ btn = robot.getButtons()
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
 
-def btnStop(b):
+def btnStop(b) -> None:
+    """
+    Stop the motors and exit the program.
+
+    Args:
+        b:
+
+    Returns:
+        None: stops motor and exits.
+    """
     robot.stopMotors()
     exit()
 
 btn.on_backspace = btnStop
 
-def run():
+def run() -> None:
     """
     Attach leftMotor to leftSensor and rightMotor to rightSensor.
     Set the speed of each motor to the value of the intensity * _amplify.
     Hit the back button to stop the program.
+
+    Returns:
+        None: continously run the robot, and check for button press.
     """
     try:
         while True:
             btn.process()
-        
+ 
             robot.speedUp(leftMotor, robot.getSensorValue('left'))
             robot.speedUp(rightMotor, robot.getSensorValue('right'))
     finally:

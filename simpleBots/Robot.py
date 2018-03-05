@@ -14,6 +14,9 @@ class Robot:
         """
         Set the amount to amplify the motor by, and assign each
         motor and sensor its respective port on the EV3 machine.
+
+        Args:
+            amplify (int): amount to amplify motors by.
         """
         self.__amplify = amplify
         self.motorLeft = ev3.LargeMotor('outA')
@@ -25,6 +28,10 @@ class Robot:
         """
         Proportionally speed up the motor as speed increases.
 
+        Args:
+            motor (ev3.LargeMotor): the motor to speed up.
+            speed (int): amount to speed up by.
+
         Returns:
             None: calculates and sets speed of motor.
         """
@@ -34,6 +41,10 @@ class Robot:
     def slowDown(self, motor: ev3.LargeMotor, speed: int) -> None:
         """
         Proportionally slow down the motor as speed increases.
+
+        Args:
+            motor (ev3.LargeMotor): the motor to slow down.
+            speed (int): amount to slow down by.
 
         Returns:
             None: calculates and sets speed of motor.
