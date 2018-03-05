@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/.suo" afterPath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/.suo" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/Server/sqlite3/storage.ide" afterPath="$PROJECT_DIR$/Ev3Visualizer/.vs/Ev3Visualizer/v15/Server/sqlite3/storage.ide" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Assets/Scripts/DataPlotter.cs" afterPath="$PROJECT_DIR$/Ev3Visualizer/Assets/Scripts/DataPlotter.cs" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/CurrentLayout.dwlt" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/CurrentLayout.dwlt" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/assetDatabase3" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/52/52a206b72a8f4f749c28d8b18b42dd19" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/52/52a206b72a8f4f749c28d8b18b42dd19" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/68/6840ac8c31051714fb3c57a13bba8bf8" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/68/6840ac8c31051714fb3c57a13bba8bf8" />
-      <change beforePath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/ad/addccc6df22a4464eb1fededde79f492" afterPath="$PROJECT_DIR$/Ev3Visualizer/Library/metadata/ad/addccc6df22a4464eb1fededde79f492" />
+      <change beforePath="$PROJECT_DIR$/simpleBots/Aggressive.py" afterPath="$PROJECT_DIR$/simpleBots/Aggressive.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ev3Global.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ev3Global.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="21">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aggressive.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simpleBots/Aggressive.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -128,6 +129,7 @@
         <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py" />
         <option value="$PROJECT_DIR$/Test" />
         <option value="$PROJECT_DIR$/src/Ev3Grid/Ev3CsvExporter.py" />
+        <option value="$PROJECT_DIR$/simpleBots/Aggressive.py" />
       </list>
     </option>
   </component>
@@ -172,7 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,13 +185,7 @@
             <path>
               <item name="EV3Robot" type="b2602c69:ProjectViewProjectNode" />
               <item name="EV3Robot" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EV3Robot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EV3Robot" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="csv" type="462c0819:PsiDirectoryNode" />
+              <item name="simpleBots" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EV3Robot" type="b2602c69:ProjectViewProjectNode" />
@@ -200,7 +196,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,6 +367,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2390925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.49739584" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23845327" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -380,7 +377,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.49739584" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -428,13 +424,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Coordinates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6258">
-          <caret line="298" column="79" lean-forward="false" selection-start-line="298" selection-start-column="79" selection-end-line="298" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -785,8 +774,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="21">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleBots/Aggressive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
           <folding />
         </state>
       </provider>

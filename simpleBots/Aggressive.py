@@ -21,18 +21,31 @@ btn = ev3.Button()
 cSensorLeft.mode = 'COL-AMBIENT'
 cSensorRight.mode = 'COL-AMBIENT'
 
-def cleanUp():
+def cleanup() -> None:
     """
     Stop all motors.
+
+    Returns:
+        None: Stops Ev3's motors.
     """
     motorLeft.stop()
     motorRight.stop()
     exit()
 
-def btnStop(b):
-    cleanUp()
+def btnstop(a_b) -> None:
+    #TODO: Finish Doctstring
+    """
 
-btn.on_backspace = btnStop
+    Args:
+        a_b ():
+
+    Returns:
+        None:
+
+    """
+    cleanup()
+
+btn.on_backspace = btnstop
 
 """
 Attach leftMotor to cSensorRight and rightMotor to cSensorLeft.
@@ -42,11 +55,11 @@ Hit back button to stop program.
 try:
     while True:
         btn.process()
-        
+
         leftSpeed = cSensorRight.value() * _amplify
         rightSpeed = cSensorLeft.value() * _amplify
 
         motorLeft.run_forever(speed_sp=leftSpeed)
         motorRight.run_forever(speed_sp=rightSpeed)
 finally:
-    cleanUp()
+    cleanup()
