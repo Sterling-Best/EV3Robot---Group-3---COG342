@@ -13,7 +13,7 @@ class Ev3CsvExporter:
         """"
         Initialization of Ev3CsvExporter object.
         """
-        self.fileDir = '../EV3Robot/out/csv/'
+        self.fileDir = '../../../EV3Robot/out/csv/'
 
     def createcsv(self, a_targetglobal) -> None:
         """
@@ -28,7 +28,7 @@ class Ev3CsvExporter:
 
         filestr = self.fileDir + self.datetimefilename() + '.csv'
         coordlist = a_targetglobal.collectcoord()
-        with open(self.fileDir + self.datetimefilename() + '.csv', 'w') as csvfile:
+        with open(filestr, 'w') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
             filewriter.writerow(["X", "Y"])
             for coord in coordlist:
