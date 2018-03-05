@@ -22,6 +22,7 @@ btn = ev3.Button()
 cSensorLeft.mode = 'COL-AMBIENT'
 cSensorRight.mode = 'COL-AMBIENT'
 
+#Fucntions
 def cleanup() -> None:
     """
     Stop all motors.
@@ -45,9 +46,10 @@ def btnstop(a_b) -> None:
     """
     cleanup()
 
+#Declaring button commands
 btn.on_backspace = btnstop
 
-
+#Instructions Execution
 """
 Attach leftMotor to leftSensor and rightMotor to rightSensor.
 Set the speed of each motor to the value of the intensity * _amplify.

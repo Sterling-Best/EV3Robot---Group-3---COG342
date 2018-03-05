@@ -22,6 +22,7 @@ btn = ev3.Button()
 cSensorLeft.mode = 'COL-AMBIENT'
 cSensorRight.mode = 'COL-AMBIENT'
 
+#Functions
 def cleanup() -> None:
     """
     Stop all motors.
@@ -46,8 +47,10 @@ def btnstop(a_b) -> None:
 
     cleanup()
 
+#Declaring button comands
 btn.on_backspace = btnstop
 
+#Instructions Exectuion
 """
 Attach leftMotor to cSensorLeft and rightMotor to cSensorRight.
 If the value of either sensor is above _threshold stop the respective
