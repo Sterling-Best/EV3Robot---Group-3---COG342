@@ -5,6 +5,14 @@ robot = Robot(10)
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
 
+btn = robot.getButtons()
+
+def btnStop(b) -> None:
+    robot.stopMotors()
+    exit()
+
+btn.on_backspace = btnStop
+
 
 
 def run() -> None:
@@ -16,6 +24,8 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
-    while robot.getButtons().on_backspace():
+    while True:
+        btn.process()
+
         robot.speedUp(leftMotor, 10)
         robot.speedUp(rightMotor, 10)
