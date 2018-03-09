@@ -1,4 +1,4 @@
-from src.Assignment2.Robot import Robot
+from Robot import Robot
 
 robot = Robot(10)
 
