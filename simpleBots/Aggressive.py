@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import ev3dev.ev3 as ev3
+from Robot import Robot
 
 """
 Aggressive is based on Braitenberg's vehicle 2B.
@@ -8,19 +8,21 @@ turn towards them and hit them with high velocity, as if it wanted
 to destroy them.' (Braitenberg, 1987)
 """
 
-_amplify = 10
+robot = Robot(50)
 
-motorLeft = ev3.LargeMotor('outA')
-motorRight = ev3.LargeMotor('outD')
+btn = robot.getButtons()
 
-cSensorLeft = ev3.ColorSensor('in1')
-cSensorRight = ev3.ColorSensor('in4')
+leftMotor = robot.getMotor('left')
+rightMotor = robot.getMotor('right')
 
-btn = ev3.Button()
+def btnStop(b):
+    """
+    Stop the motors and exit program.
 
-cSensorLeft.mode = 'COL-AMBIENT'
-cSensorRight.mode = 'COL-AMBIENT'
+    Args:
+        b:
 
+<<<<<<< HEAD
 #Functions
 def cleanup() -> None:
     """
@@ -28,11 +30,15 @@ def cleanup() -> None:
 
     Returns:
         None: Stops Ev3's motors.
+=======
+    Returns:
+        None: Stops motors and exits.
+>>>>>>> simpleBots
     """
-    motorLeft.stop()
-    motorRight.stop()
+    robot.stopMotors()
     exit()
 
+<<<<<<< HEAD
 def btnstop(a_b) -> None:
     #TODO: Finish Doctstring
     """
@@ -66,3 +72,27 @@ try:
         motorRight.run_forever(speed_sp=rightSpeed)
 finally:
     cleanup()
+=======
+btn.on_backspace = btnStop
+
+def run() -> None:
+    """
+    Attach leftMotor to cSensorRight and rightMotor to cSensorLeft.
+    Set speed of each motor to the value of the intensity * _amplify.
+    Hit back button to stop program.
+
+    Returns:
+        None: continously run the robot, and check for button press.
+    """
+    try:
+        while True:
+            btn.process()
+
+            robot.speedUp(leftMotor, robot.getSensorValue('right'))
+            robot.speedUp(rightMotor, robot.getSensorValue('left'))
+    finally:
+        robot.stopMotors()
+
+if __name__ == "__main__":
+    run()
+>>>>>>> simpleBots

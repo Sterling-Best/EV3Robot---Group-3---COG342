@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import ev3dev.ev3 as ev3
+from Robot import Robot
 
 """
 Coward is based on Braitenberg's vehicle 2A.
@@ -9,16 +9,21 @@ where the influence of the source is scarcely felt.'
 (Braitenberg, 1987)
 """
 
+<<<<<<< HEAD
 _amplify = 10
 
 motorLeft = ev3.LargeMotor('outA')
 motorRight = ev3.LargeMotor('outD')
+=======
+robot = Robot(50)
+>>>>>>> simpleBots
 
-cSensorLeft = ev3.ColorSensor('in1')
-cSensorRight = ev3.ColorSensor('in4')
+btn = robot.getButtons()
 
-btn = ev3.Button()
+leftMotor = robot.getMotor('left')
+rightMotor = robot.getMotor('right')
 
+<<<<<<< HEAD
 cSensorLeft.mode = 'COL-AMBIENT'
 cSensorRight.mode = 'COL-AMBIENT'
 
@@ -29,11 +34,22 @@ def cleanup() -> None:
 
     Returns:
         None: Stops Ev3's Motors
+=======
+def btnStop(b) -> None:
     """
-    motorLeft.stop()
-    motorRight.stop()
+    Stop the motors and exit the program.
+
+    Args:
+        b:
+
+    Returns:
+        None: Stops motors and exits.
+>>>>>>> simpleBots
+    """
+    robot.stopMotors()
     exit()
 
+<<<<<<< HEAD
 def btnstop(a_b) -> None:
     #TODO: Complete Docstring
     """
@@ -66,3 +82,28 @@ try:
         motorRight.run_forever(speed_sp=rightSpeed)
 finally:
     cleanup()
+=======
+btn.on_backspace = btnStop
+
+def run() -> None:
+    """
+    Attach leftMotor to leftSensor and rightMotor to rightSensor.
+    Set the speed of each motor to the value of the intensity * _amplify.
+    Hit the back button to stop the program.
+
+    Returns:
+        None: continously run the robot, and check for button press.
+    """
+    try:
+        while True:
+            btn.process()
+
+            robot.speedUp(leftMotor, robot.getSensorValue('left'))
+            robot.speedUp(rightMotor, robot.getSensorValue('right'))
+    finally:
+        robot.stopMotors()
+
+
+if __name__ == "__main__":
+    run()
+>>>>>>> simpleBots
