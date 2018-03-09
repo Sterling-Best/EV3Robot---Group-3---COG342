@@ -23,6 +23,8 @@ def btnStop(b):
         b:
 
 <<<<<<< HEAD
+
+
 #Functions
 def cleanup() -> None:
     """

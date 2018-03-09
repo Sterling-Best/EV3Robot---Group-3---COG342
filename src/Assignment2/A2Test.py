@@ -6,6 +6,7 @@ leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
 
 
+
 def run() -> None:
     """
     Attach leftMotor to leftSensor and rightMotor to rightSensor.
@@ -15,5 +16,6 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
-    robot.speedUp(leftMotor, 10)
-    robot.speedUp(rightMotor, 10)
+    while robot.getButtons().on_backspace():
+        robot.speedUp(leftMotor, 10)
+        robot.speedUp(rightMotor, 10)
