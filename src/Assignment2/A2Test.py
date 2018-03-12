@@ -1,6 +1,9 @@
-from Robot import Robot
+from src.Assignment2.Robot import Robot
+from src.Ev3Grid.Ev3Global import Ev3Global
 
 robot = Robot(10)
+
+globalGrid = Ev3Global(16)
 
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
@@ -26,6 +29,5 @@ def run() -> None:
     """
     while True:
         btn.process()
-
         robot.speedUp(leftMotor, 10)
         robot.speedUp(rightMotor, 10)

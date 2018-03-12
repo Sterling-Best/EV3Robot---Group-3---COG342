@@ -398,12 +398,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addccc6df22a4464eb1fededde79f492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputfile: 20180305-111708
+  inputfile: 20180312-144331
   columnx: 0
   columny: 1
+  columndetial: 2
   xName: 
   yName: 
-  PointPrefab: {fileID: 1769483503100912, guid: 6f1682ea30dacc74489d58f526684b2a,
+  detailName: 
+  detailString: 
+  PointPrefab: {fileID: 1623561393033636, guid: 417ceaa21d44cda40a2691fe45a0f283,
+    type: 2}
+  PointofObstructionPrefab: {fileID: 1769483503100912, guid: 6f1682ea30dacc74489d58f526684b2a,
+    type: 2}
+  ColorPrefabBlack: {fileID: 1734664915477346, guid: 4c973f5363e818040a98d426c363b361,
+    type: 2}
+  ColorPrefabWhite: {fileID: 1029559172514618, guid: b15e6471cec4e7f45aa9da3ff07d1d7d,
     type: 2}
 --- !u!4 &1060440784 stripped
 Transform:

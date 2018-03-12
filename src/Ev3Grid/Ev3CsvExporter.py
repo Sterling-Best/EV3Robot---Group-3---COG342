@@ -30,9 +30,17 @@ class Ev3CsvExporter:
         coordlist = a_targetglobal.collectcoord()
         with open(filestr, 'w') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-            filewriter.writerow(["X", "Y"])
+            filewriter.writerow(["X", "Y", "Detail"])
             for coord in coordlist:
-                filewriter.writerow([str(coord.get_xcoordinate()), str(coord.get_ycoordinate())])
+                rowlist = []
+                rowlist.append(str(coord.get_xcoordinate()))
+                rowlist.append(str(coord.get_ycoordinate()))
+                if len(coord.get_propertylist()) == 0:
+                    rowlist.append("--")
+                else:
+                    for detail in coord.get_propertylist():
+                            rowlist.append(detail)
+                filewriter.writerow(rowlist)
         csvfile.close()
 
     def datetimefilename(self) -> str:

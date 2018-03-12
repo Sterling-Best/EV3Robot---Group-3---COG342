@@ -14,12 +14,20 @@ public class DataPlotter : MonoBehaviour
 
     public int columnx = 0;
     public int columny = 1;
+    public int columndetial = 2;
+
 
     public string xName;
     public string yName;
+    public string detailName;
+
+    public object detailobject;
+    public string detailString;
 
     public GameObject PointPrefab;
-
+    public GameObject PointofObstructionPrefab;
+    public GameObject ColorPrefabBlack;
+    public GameObject ColorPrefabWhite;
 
     // Use this for initialization
     [MenuItem("Select .csv")]
@@ -39,11 +47,35 @@ public class DataPlotter : MonoBehaviour
             Debug.Log("Column name is " + key);
         xName = columnList[columnx];
         yName = columnList[columny];
+        if (columnList[columndetial] != null) {
+            detailName = columnList[columndetial];
+        }
+        detailName = columnList[columndetial];
         for (var i = 0; i < pointList.Count; i++)
         {
             float x = System.Convert.ToSingle(pointList[i][xName]);
             float y = System.Convert.ToSingle(pointList[i][yName]);
-            Instantiate(PointPrefab, new Vector2(x, y), Quaternion.identity);
+            if (columnList[columndetial] != null)
+            {
+                detailobject = pointList[i][detailName];
+                detailString = detailobject.ToString();
+            }
+            if (detailString == "PointofObstruction")
+            {
+                Instantiate(PointofObstructionPrefab, new Vector2(x, y), Quaternion.identity);
+            }
+            else if (detailString == "Color_black")
+            {
+                Instantiate(ColorPrefabBlack, new Vector2(x, y), Quaternion.identity);
+            }
+            else if (detailString == "Color_white")
+            {
+                Instantiate(ColorPrefabWhite, new Vector2(x, y), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(PointPrefab, new Vector2(x, y), Quaternion.identity);
+            }
         }
     }
 }
