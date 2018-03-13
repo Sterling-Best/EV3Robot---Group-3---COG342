@@ -7,7 +7,7 @@ class Ev3CsvExporter:
     Using data from given Ev3Global object, create an csv file of Ev3Coordinate Objects.
     """
 
-    fileDir: str
+    fileDir = "" #str
 
     def __init__(self):
         """"
