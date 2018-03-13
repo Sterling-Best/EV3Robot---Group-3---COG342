@@ -1,4 +1,4 @@
-from src.Assignment2.Robot import Robot
+from Robot import Robot
 from src.Ev3Grid.Ev3Global import Ev3Global
 from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
 
