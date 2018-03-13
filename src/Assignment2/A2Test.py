@@ -35,10 +35,10 @@ def run() -> None:
     """
     while True:
         btn.process()
-        if leftSensor.color > 6:
+        if leftSensor.ambient_light_intensity >= 50:
             globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
             robot.speedUp(leftMotor, 5)
-        elif rightSensor.color > 1:
+        elif rightSensor.ambient_light_intensity < 50:
             globalGrid.addcoord(Ev3Coordinates(0,0,"Color_white"))
             robot.speedUp(rightMotor, 5)
         else:
