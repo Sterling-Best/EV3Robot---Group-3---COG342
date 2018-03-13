@@ -1,4 +1,4 @@
-from Ev3Coordinates import Ev3Coordinates
+from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
 
 class Ev3Region:
     """
