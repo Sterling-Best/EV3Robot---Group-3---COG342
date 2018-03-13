@@ -1,6 +1,6 @@
 from Robot import Robot
-from src.Ev3Grid.Ev3Global import Ev3Global
-from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
+from Ev3Grid.Ev3Global import Ev3Global
+from Ev3Grid.Ev3Coordinates import Ev3Coordinates
 
 
 
