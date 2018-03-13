@@ -11,9 +11,9 @@ robot = Robot(10)
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
 leftSensor = robot.cSensorRight
-leftSensor.setMode(1,2)
+leftSensor.mode = 'COL-COLOR'
 rightSensor = robot.cSensorLeft
-rightSensor.setMode(4,2)
+rightSensor.mode = 'COL-COLOR'
 btn = robot.getButtons()
 
 
