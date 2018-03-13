@@ -8,7 +8,8 @@ class Ev3Global:
     Contains all regions and coordinates during a robot's run.
     """
 
-    globalCoordinate: list
+    #globalCoordinate: list
+    globalCoordinates = []
 
     __regionSize: int
 
