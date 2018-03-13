@@ -13,7 +13,7 @@ class Ev3Global:
 
     __regionSize = 0
 
-    ev3Exporter: Ev3CsvExporter
+    ev3Exporter = Ev3CsvExporter()
 
     def __init__(self, a_targetsize: int) -> None:
         """
