@@ -11,9 +11,9 @@ robot = Robot(10)
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
 leftSensor = robot.cSensorRight
-leftSensor.mode = 'COL-COLOR'
+leftSensor.mode = 'COL-COLOR_White'
 rightSensor = robot.cSensorLeft
-rightSensor.mode = 'COL-COLOR'
+rightSensor.mode = 'COL-COLOR_Black'
 btn = robot.getButtons()
 
 
@@ -34,7 +34,7 @@ def run() -> None:
     """
     while True:
         btn.process()
-        if robot.getSensorValue("left") > 1000:
+        if robot.getSensorValue("left") > 50:
             globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
             robot.speedUp(leftMotor, 20)
             robot.speedUp(rightMotor, 20)
