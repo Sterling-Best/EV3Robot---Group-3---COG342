@@ -1,22 +1,26 @@
 from src.Assignment2.Robot import Robot
 from src.Ev3Grid.Ev3Global import Ev3Global
+from src.Ev3Grid.Ev3Coordinates import Ev3Coordinates
 
-robot = Robot(10)
+
 
 globalGrid = Ev3Global(16)
 
+#Robot Parts
+robot = Robot(10)
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
-
+leftSensor = robot.getSensorValue('left')
+rightSensor = robot.getSensorValue('right')
 btn = robot.getButtons()
+
+leftSensor.color = 1
 
 def btnStop(b) -> None:
     robot.stopMotors()
     exit()
 
 btn.on_backspace = btnStop
-
-
 
 def run() -> None:
     """
@@ -29,5 +33,10 @@ def run() -> None:
     """
     while True:
         btn.process()
-        robot.speedUp(leftMotor, 10)
-        robot.speedUp(rightMotor, 10)
+        if leftSensor.getSensorValue("left") > 5:
+            globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
+            robot.speedUp(leftMotor, 20)
+            robot.speedUp(rightMotor, 20)
+
+        #robot.speedUp(leftMotor, 10)
+        #robot.speedUp(rightMotor, 10)
