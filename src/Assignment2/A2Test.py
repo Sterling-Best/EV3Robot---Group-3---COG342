@@ -34,7 +34,7 @@ def run() -> None:
     """
     while True:
         btn.process()
-        if robot.getSensorValue("left") > 10:
+        if robot.getSensorValue("left") > 1000:
             globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
             robot.speedUp(leftMotor, 20)
             robot.speedUp(rightMotor, 20)
