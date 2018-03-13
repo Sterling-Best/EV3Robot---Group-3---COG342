@@ -1,6 +1,6 @@
-from Assignment2.Robot import Robot
-from Ev3Grid.Ev3Global import Ev3Global
-from Ev3Grid.Ev3Coordinates import Ev3Coordinates
+from Robot import Robot
+from Ev3Global import Ev3Global
+from Ev3Coordinates import Ev3Coordinates
 
 
 
