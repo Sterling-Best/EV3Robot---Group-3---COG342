@@ -12,10 +12,10 @@ class Ev3Coordinates:
 
     #Declares Class Variables
     #Coordinates
-    __xCoordinate: int
-    __yCoordinate: int
+    __xCoordinate = 0 #int
+    __yCoordinate = 0 #int
     #Property List
-    __propertyList: list
+    __propertyList = [] #list
 
     #Initializer
     def __init__(self, a_targetx : int, a_targety : int, *a_targetproperties: str):

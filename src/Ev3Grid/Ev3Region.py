@@ -7,13 +7,13 @@ class Ev3Region:
 
     # TODO: Find Docstring Generator
 
-    __xMax: int
-    __xMin: int
-    __yMax: int
-    __yMin: int
+    __xMax = 0 #int
+    __xMin = 0 #int
+    __yMax = 0 #int
+    __yMin = 0 #int
 
     #TODO: Convert regionCoordinates to 'private' variable
-    regionCoordinates: list
+    regionCoordinates = [] #list
 
     def __init__(self, targetcoordinates : Ev3Coordinates, targetregionsize: int):
         # TODO: Create Unittests

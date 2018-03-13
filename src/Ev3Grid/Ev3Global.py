@@ -11,7 +11,7 @@ class Ev3Global:
     #globalCoordinate: list
     globalCoordinates = []
 
-    __regionSize: int
+    __regionSize = 0
 
     ev3Exporter: Ev3CsvExporter
 
