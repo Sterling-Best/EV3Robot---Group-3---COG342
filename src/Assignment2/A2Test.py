@@ -37,10 +37,13 @@ def run() -> None:
         btn.process()
         if leftSensor.ReadRawValue(1,0) > 1:
             globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
-            robot.speedUp(leftMotor, 20)
-        if rightSensor.ReadRawValue(4,0) > 6:
+            robot.speedUp(leftMotor, 5)
+        elif rightSensor.ReadRawValue(4,0) > 6:
             globalGrid.addcoord(Ev3Coordinates(0,0,"Color_white"))
-            robot.speedUp(rightMotor, 20)
+            robot.speedUp(rightMotor, 5)
+        else:
+            robot.speedUp(leftMotor, 1)
+            robot.speedUp(rightMotor, 1)
     globalGrid.exportcsv()
         #robot.speedUp(leftMotor, 10)
         #robot.speedUp(rightMotor, 10)
