@@ -21,8 +21,8 @@ class Robot:
         self.__amplify = amplify
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
-        self.cSensorLeft = ev3.ColorSensor('in1')
-        self.cSensorRight = ev3.ColorSensor('in4')
+        #self.cSensorLeft = ev3.ColorSensor('in1')
+        #self.cSensorRight = ev3.ColorSensor('in4')
 
     def speedUp(self, motor: ev3.LargeMotor, speed: int) -> None:
         """

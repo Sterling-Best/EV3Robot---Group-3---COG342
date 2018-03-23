@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cba0bed-20e3-4711-8543-d1a42e6eacff" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/A2Test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Ev3Coordinates.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Ev3CsvExporter.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Ev3Global.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Ev3Region.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Ev3Test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/Robot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Assignment3/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Test" afterPath="$PROJECT_DIR$/Test" />
-      <change beforePath="$PROJECT_DIR$/src/Assignment2/A2Test.py" afterPath="$PROJECT_DIR$/src/Assignment2/A2Test.py" />
-      <change beforePath="$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Global.py" />
-      <change beforePath="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Region.py" />
-      <change beforePath="$PROJECT_DIR$/src/Ev3Grid/Ev3Test.py" afterPath="$PROJECT_DIR$/src/Ev3Grid/Ev3Test.py" />
+      <change beforePath="$PROJECT_DIR$/src/Assignment3/A2Test.py" afterPath="$PROJECT_DIR$/src/Assignment3/A2Test.py" />
+      <change beforePath="$PROJECT_DIR$/src/Assignment3/Robot.py" afterPath="$PROJECT_DIR$/src/Assignment3/Robot.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,8 +57,8 @@
       <file leaf-file-name="Robot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment3/Robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+            <state relative-caret-position="504">
+              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -90,8 +77,8 @@
       <file leaf-file-name="A2Test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assignment3/A2Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+            <state relative-caret-position="-133">
+              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -180,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/Assignment2/Ev3CsvExporter.py" />
         <option value="$PROJECT_DIR$/src/Assignment2/A2Test.py" />
         <option value="$PROJECT_DIR$/src/Assignment3/A2Test.py" />
+        <option value="$PROJECT_DIR$/src/Assignment3/Robot.py" />
       </list>
     </option>
   </component>
@@ -858,14 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment3/Robot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment2/Ev3Global.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -874,10 +854,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assignment3/Robot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment3/A2Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+        <state relative-caret-position="-133">
+          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>

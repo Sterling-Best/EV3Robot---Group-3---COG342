@@ -10,10 +10,10 @@ globalGrid = Ev3Global(16)
 robot = Robot(10)
 leftMotor = robot.getMotor('left')
 rightMotor = robot.getMotor('right')
-leftSensor = robot.cSensorRight
-leftSensor.mode = 'COL-COLOR'
-rightSensor = robot.cSensorLeft
-rightSensor.mode = 'COL-COLOR'
+#leftSensor = robot.cSensorRight
+#leftSensor.mode = 'COL-COLOR'
+#rightSensor = robot.cSensorLeft
+#rightSensor.mode = 'COL-COLOR'
 btn = robot.getButtons()
 
 test = True
