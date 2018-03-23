@@ -1,5 +1,5 @@
-from src.Assignment3.Ev3Global import Ev3Global
-from src.Assignment3.Ev3Coordinates import Ev3Coordinates
+from Ev3Global import Ev3Global
+from Ev3Coordinates import Ev3Coordinates
 
 aG = Ev3Global(16)
 print(aG)

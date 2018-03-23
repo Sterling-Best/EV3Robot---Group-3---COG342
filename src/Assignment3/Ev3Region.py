@@ -1,4 +1,4 @@
-from src.Assignment3.Ev3Coordinates import Ev3Coordinates
+from Ev3Coordinates import Ev3Coordinates
 
 class Ev3Region:
     """

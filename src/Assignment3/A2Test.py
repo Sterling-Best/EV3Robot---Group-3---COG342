@@ -16,6 +16,7 @@ rightSensor = robot.cSensorLeft
 rightSensor.mode = 'COL-COLOR'
 btn = robot.getButtons()
 
+test = True
 
 def btnStop(b) -> None:
     robot.stopMotors()
@@ -34,6 +35,11 @@ def run() -> None:
     """
     while True:
         btn.process()
+
+        if test == True:
+            robot.leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+        else:
+            robot.rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
 
     #     if leftSensor.color  == 6 :
     #         globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))

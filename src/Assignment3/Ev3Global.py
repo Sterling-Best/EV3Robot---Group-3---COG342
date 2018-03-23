@@ -1,6 +1,6 @@
-from src.Assignment3.Ev3Coordinates import Ev3Coordinates
-from src.Assignment3.Ev3Region import Ev3Region
-from src.Assignment3.Ev3CsvExporter import Ev3CsvExporter
+from Ev3Coordinates import Ev3Coordinates
+from Ev3Region import Ev3Region
+from Ev3CsvExporter import Ev3CsvExporter
 
 
 class Ev3Global:
