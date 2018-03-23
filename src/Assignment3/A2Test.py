@@ -35,17 +35,12 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
-    test = True
+    teststr = ["motorprecisiontest1"]
     while True:
         btn.process()
-        if test == True:
-            leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
-            time.sleep(10)
-            test = False
-        else:
-            rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
-            time.sleep(10)
-            test = True
+        if "motorprecisiontest1" in teststr:
+            motorprecisiontest1()
+
 
     #     if leftSensor.color  == 6 :
     #         globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
@@ -56,3 +51,15 @@ def run() -> None:
     # globalGrid.exportcsv()
         #robot.speedUp(leftMotor, 10)
         #robot.speedUp(rightMotor, 10)
+
+def motorprecisiontest1 () -> None:
+    test = True
+    if test == True:
+        leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+        time.sleep(2)
+        test = False
+    else:
+        rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+        time.sleep(2)
+        test = True
+
