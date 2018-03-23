@@ -69,5 +69,5 @@ def motorprecisiontest1 (test: bool) -> bool:
         else:
             return True
 
-def motorcmtest()
+#def motorcmtest():
 
