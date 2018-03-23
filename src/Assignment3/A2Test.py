@@ -57,10 +57,12 @@ def motorprecisiontest1 (test: bool) -> bool:
     if test == True:
         leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
         leftMotor.wait_while(leftMotor.STATE_RUNNING)
+        leftMotor.wait_while(leftMotor.STATE_RAMPING)
         return False
     else:
         rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
-        rightMotor.wait_while(leftMotor.STATE_RUNNING)
+        rightMotor.wait_while(rightMotor.STATE_RUNNING)
+        rightMotor.wait_while(rightMotor.STATE_RAMPING)
         return True
 
 #def motorcmtest():
