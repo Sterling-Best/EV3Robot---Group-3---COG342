@@ -55,19 +55,13 @@ def run() -> None:
 
 def motorprecisiontest1 (test: bool) -> bool:
     if test == True:
-        a = 0
         leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
-        while leftMotor.state == "running":
-            a += 1
-        else:
-            return False
+        leftMotor.wait_while(leftMotor.STATE_RUNNING)
+        return False
     else:
-        a = 0
         rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
-        while leftMotor.state == "running":
-            a += 1
-        else:
-            return True
+        rightMotor.wait_while(leftMotor.STATE_RUNNING)
+        return True
 
 #def motorcmtest():
 
