@@ -1,3 +1,5 @@
+import time
+
 from Robot import Robot
 from Ev3Global import Ev3Global
 from Ev3Coordinates import Ev3Coordinates
@@ -38,9 +40,11 @@ def run() -> None:
         btn.process()
         if test == True:
             leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+            time.sleep(10)
             test = False
         else:
             rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+            time.sleep(10)
             test = True
 
     #     if leftSensor.color  == 6 :
