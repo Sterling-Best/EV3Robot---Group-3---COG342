@@ -16,7 +16,7 @@ rightMotor = robot.getMotor('right')
 #rightSensor.mode = 'COL-COLOR'
 btn = robot.getButtons()
 
-test = True
+
 
 def btnStop(b) -> None:
     robot.stopMotors()
@@ -33,9 +33,9 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
+    test = True
     while True:
         btn.process()
-
         if test == True:
             leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
             test = False
