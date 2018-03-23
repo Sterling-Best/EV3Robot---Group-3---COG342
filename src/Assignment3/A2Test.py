@@ -36,10 +36,11 @@ def run() -> None:
         None: continously run the robot, and check for button press.
     """
     teststr = ["motorprecisiontest1"]
+    testbool = True
     while True:
         btn.process()
         if "motorprecisiontest1" in teststr:
-            motorprecisiontest1(True)
+           testbool = motorprecisiontest1(testbool)
 
 
     #     if leftSensor.color  == 6 :
@@ -52,14 +53,13 @@ def run() -> None:
         #robot.speedUp(leftMotor, 10)
         #robot.speedUp(rightMotor, 10)
 
-def motorprecisiontest1 (test: bool) -> None:
-
+def motorprecisiontest1 (test: bool) -> bool:
     if test == True:
         leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
         time.sleep(2)
-        test = False
+        return False
     else:
         rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
         time.sleep(2)
-        test = True
+        return True
 
