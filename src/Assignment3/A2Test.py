@@ -37,9 +37,9 @@ def run() -> None:
         btn.process()
 
         if test == True:
-            robot.leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+            leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
         else:
-            robot.rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+            rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
 
     #     if leftSensor.color  == 6 :
     #         globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
