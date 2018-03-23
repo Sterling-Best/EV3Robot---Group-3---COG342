@@ -39,7 +39,7 @@ def run() -> None:
     while True:
         btn.process()
         if "motorprecisiontest1" in teststr:
-            motorprecisiontest1()
+            motorprecisiontest1(True)
 
 
     #     if leftSensor.color  == 6 :
@@ -52,8 +52,8 @@ def run() -> None:
         #robot.speedUp(leftMotor, 10)
         #robot.speedUp(rightMotor, 10)
 
-def motorprecisiontest1 () -> None:
-    test = True
+def motorprecisiontest1 (test: bool) -> None:
+
     if test == True:
         leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
         time.sleep(2)
