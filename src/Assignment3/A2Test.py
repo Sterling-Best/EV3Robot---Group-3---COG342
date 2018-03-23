@@ -38,8 +38,10 @@ def run() -> None:
 
         if test == True:
             leftMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+            test = False
         else:
             rightMotor.run_to_rel_pos(speed_sp=200, position_sp=75)
+            test = True
 
     #     if leftSensor.color  == 6 :
     #         globalGrid.addcoord(Ev3Coordinates(0,0,"Color_black"))
