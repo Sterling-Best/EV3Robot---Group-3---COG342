@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import ev3dev.ev3 as ev3
+import ev3dev.ev3 as ev3g
 
 class Robot:
     """
@@ -46,6 +46,8 @@ class Robot:
         currentdistance = self.ultrasonic.value()/10
         if currentdistance == estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
+        elif currentdistance <= estimateddistance:
+            self.LED.set_color(self.LED.LEFT, self.LED.YELLOW)
         else:
             self.LED.set_color(self.LED.LEFT, self.LED.RED)
 
