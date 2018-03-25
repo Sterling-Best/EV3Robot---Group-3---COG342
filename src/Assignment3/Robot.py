@@ -51,6 +51,13 @@ class Robot:
         else:
             self.LED.set_color(self.LED.LEFT, self.LED.RED)
 
+    def tankrotate(self, degrees: int) -> None:
+        rotation = degrees * 1
+        self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
+        self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=-rotation)
+        self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
+        self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
+
     def speedUp(self, motor: ev3.LargeMotor, speed: int) -> None:
         """
         Proportionally speed up the motor as speed increases.

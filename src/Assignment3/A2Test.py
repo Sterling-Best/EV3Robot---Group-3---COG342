@@ -35,8 +35,10 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
-    movefowardtest(1)
-    movefowardtest(5)
+    robot.tankrotate(90)
+    
+    # movefowardtest(1)
+    # movefowardtest(5)
 
     # teststr = ["motorprecisiontest1"]
     # testbool = True
