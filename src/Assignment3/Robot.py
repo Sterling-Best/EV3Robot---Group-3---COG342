@@ -36,14 +36,14 @@ class Robot:
 
     def moveforward(self, distance: int) -> None:
         self.LED.all_off()
-        initiatldistace = round(self.ultrasonic.value())
+        initiatldistace = round(self.ultrasonic.distance_inches())
         estimateddistance = initiatldistace - distance
-        rotation = distance * 15
+        rotation = distance * 12
         self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
         self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
-        currentdistance = round(self.ultrasonic.value())
+        currentdistance = round(self.ultrasonic.distance_inches())
         if currentdistance == estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
         elif currentdistance > estimateddistance:
