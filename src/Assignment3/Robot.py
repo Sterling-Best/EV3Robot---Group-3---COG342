@@ -36,17 +36,17 @@ class Robot:
         #self.cSensorRight = ev3.ColorSensor('in4')
 
     def moveforward(self, distance: int) -> None:
-        initiatldistace = int(self.ultrasonic.value())
+        initiatldistace = round(self.ultrasonic.value())
         estimateddistance = initiatldistace - distance
-        rotation = distance * 52
+        rotation = distance * 51
         self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
         self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
-        currentdistance = int(self.ultrasonic.value())
+        currentdistance = round(self.ultrasonic.value())
         if currentdistance == estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
-        elif currentdistance < estimateddistance:
+        elif currentdistance > estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.YELLOW)
         else:
             self.LED.set_color(self.LED.LEFT, self.LED.RED)
