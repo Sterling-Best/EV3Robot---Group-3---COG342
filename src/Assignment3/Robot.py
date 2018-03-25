@@ -38,7 +38,7 @@ class Robot:
         self.LED.all_off()
         initiatldistace = round(self.ultrasonic.value()/10)
         estimateddistance = initiatldistace - distance
-        rotation = distance * 50
+        rotation = distance * 52
         self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
