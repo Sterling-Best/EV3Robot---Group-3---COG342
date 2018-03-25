@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import ev3dev.ev3 as ev3
+from ev3dev.helper import LargeMotorPair
 
 class Robot:
     """
@@ -26,7 +27,7 @@ class Robot:
         #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
-        self.motorPair = ev3.LargeMotorPair('outA', 'outD')
+        self.motorPair = LargeMotorPair('outA', 'outD')
         # Initiate Sensors
         self.ultrasonic = ev3.UltrasonicSensor('in1')
         assert self.ultrasonic.connected
