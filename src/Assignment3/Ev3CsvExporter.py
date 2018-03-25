@@ -30,13 +30,13 @@ class Ev3CsvExporter:
         coordlist = a_targetglobal.collectcoord()
         with open(filestr, 'wb') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-            filewriter.writerow(['X', 'Y', 'D'])
+            filewriter.writerow([1, 2, 3])
             for coord in coordlist:
                 rowlist = []
-                rowlist.append(str(coord.get_xcoordinate()))
-                rowlist.append(str(coord.get_ycoordinate()))
+                rowlist.append(coord.get_xcoordinate())
+                rowlist.append(coord.get_ycoordinate())
                 if len(coord.get_propertylist()) == 0:
-                    rowlist.append("--")
+                    rowlist.append(0)
                 else:
                     for detail in coord.get_propertylist():
                             rowlist.append(detail)

@@ -18,7 +18,7 @@ class Ev3Coordinates:
     __propertyList = [] #list
 
     #Initializer
-    def __init__(self, a_targetx : int, a_targety : int, *a_targetproperties: str):
+    def __init__(self, a_targetx : int, a_targety : int, *a_targetproperties):
         # TODO: Create Unittests
         """
         Inititialises a two interger graph point, x and y, for use of a 2D grid. X an Y must be integers.
