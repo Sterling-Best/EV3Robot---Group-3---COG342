@@ -10,6 +10,9 @@ class Robot:
     __threshold = 20
     __maxIntensity = 50
 
+    __usModeStr = ''
+
+
     def __init__(self, amplify: int) -> None:
         """
         Set the amount to amplify the motor by, and assign each
@@ -19,10 +22,29 @@ class Robot:
             amplify (int): amount to amplify motors by.
         """
         self.__amplify = amplify
+        self.__usModeStr = 'US - DIST - CM'
+        #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
-        #self.cSensorLeft = ev3.ColorSensor('in1')
+        # Initiate Sensors
+        self.ultrasonic = ev3.UltraSonicSensor('in1')
+        assert self.ultrasonic.connected
+        self.ultrasonic.mode = self.__usModeStr
+        # Initiate other Functions
+        self.LED = ev3.Leds()
         #self.cSensorRight = ev3.ColorSensor('in4')
+
+    def moveforward(self, distance: int) -> None:
+        initiatldistace = self.ultrasonic.value()/10
+        estimateddistance = initiatldistace - distance
+        rotation = distance * 20.4627783975294
+        self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
+        self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
+        currentdistance = self.ultrasonic.value()/10
+        if currentdistance == estimateddistance:
+            self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
+        else:
+            self.LED.set_color(self.LED.LEFT, self.LED.RED)
 
     def speedUp(self, motor: ev3.LargeMotor, speed: int) -> None:
         """
