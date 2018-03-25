@@ -32,6 +32,7 @@ class Robot:
         self.ultrasonic.mode = self.__usModeStr
         # Initiate other Functions
         self.LED = ev3.Leds()
+        self.LED.all_off()
         #self.cSensorRight = ev3.ColorSensor('in4')
 
     def moveforward(self, distance: int) -> None:

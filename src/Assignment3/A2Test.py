@@ -38,7 +38,6 @@ def run() -> None:
     movefowardtest(1)
     movefowardtest(5)
 
-
     # teststr = ["motorprecisiontest1"]
     # testbool = True
     # while True:
