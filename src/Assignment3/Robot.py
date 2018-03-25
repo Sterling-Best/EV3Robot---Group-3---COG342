@@ -39,7 +39,7 @@ class Robot:
         self.LED.all_off()
         initiatldistace = round(self.ultrasonic.value())
         estimateddistance = initiatldistace - distance
-        rotation = distance * 80
+        rotation = distance * 10
         self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
@@ -47,7 +47,7 @@ class Robot:
         currentdistance = round(self.ultrasonic.value())
         if currentdistance == estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
-        elif currentdistance < estimateddistance:
+        elif currentdistance > estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.YELLOW)
         else:
             self.LED.set_color(self.LED.LEFT, self.LED.RED)
