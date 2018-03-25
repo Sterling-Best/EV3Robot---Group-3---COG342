@@ -47,7 +47,7 @@ class Robot:
         currentdistance = round(self.ultrasonic.value())
         if currentdistance == estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
-        elif currentdistance > estimateddistance:
+        elif currentdistance < estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.YELLOW)
         else:
             self.LED.set_color(self.LED.LEFT, self.LED.RED)
