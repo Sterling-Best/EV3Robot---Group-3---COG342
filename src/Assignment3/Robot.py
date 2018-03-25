@@ -22,7 +22,7 @@ class Robot:
             amplify (int): amount to amplify motors by.
         """
         self.__amplify = amplify
-        self.__usModeStr = 'US-DIST-CM'
+        self.__usModeStr = 'US-DIST-IN'
         #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
