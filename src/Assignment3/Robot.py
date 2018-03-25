@@ -26,6 +26,7 @@ class Robot:
         #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
+        self.motorPair = ev3.LargeMotorPair('outA', 'outD')
         # Initiate Sensors
         self.ultrasonic = ev3.UltrasonicSensor('in1')
         assert self.ultrasonic.connected
@@ -39,10 +40,12 @@ class Robot:
         initiatldistace = self.ultrasonic.value()/10
         estimateddistance = initiatldistace - distance
         rotation = distance * 50
-        self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
-        self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
-        self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
-        self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
+        self.motorPair.run_to_rel_pos(speed_sp=200, position_sp=rotation)
+        self.motorPair.wait_while(self.motorPair.STATE_RUNNING)
+        # self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
+        # self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
+        # self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
+        # self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
         currentdistance = self.ultrasonic.value()/10
         if currentdistance == estimateddistance:
             self.LED.set_color(self.LED.LEFT, self.LED.GREEN)
