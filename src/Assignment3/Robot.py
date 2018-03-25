@@ -12,6 +12,8 @@ class Robot:
 
     __usModeStr = ''
 
+    __currentDegrees = 0
+
 
     def __init__(self, amplify: int) -> None:
         """
@@ -22,6 +24,7 @@ class Robot:
             amplify (int): amount to amplify motors by.
         """
         self.__amplify = amplify
+        self.__currentDegrees = 0
         #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
@@ -33,6 +36,12 @@ class Robot:
         self.LED = ev3.Leds()
         self.LED.all_off()
         #self.cSensorRight = ev3.ColorSensor('in4')
+
+    def get_currentdegrees(self) -> int:
+        return self.__currentDegrees
+
+    def set_currentdegrees(self, target: int) -> None:
+        self.__currentDegrees = target
 
     def moveforward(self, distance: int) -> None:
         self.LED.all_off()
@@ -57,6 +66,8 @@ class Robot:
         self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=-rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
         self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
+        self.set_currentdegrees(self.get_currentdegrees() + degrees)
+
 
     def speedUp(self, motor: ev3.LargeMotor, speed: int) -> None:
         """

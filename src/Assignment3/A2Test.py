@@ -1,4 +1,5 @@
 import time
+import math
 
 from Robot import Robot
 from Ev3Global import Ev3Global
@@ -36,7 +37,12 @@ def run() -> None:
         None: continously run the robot, and check for button press.
     """
     for x in range(360):
+        distance = robot.ultrasonic.value()/10
+        x = distance * math.sin(robot.get_currentdegrees())
+        y = distance * math.cos(robot.get_currentdegrees())
+        globalGrid.addcoord(Ev3Coordinates(x,y, "PointofObstruction"))
         robot.tankrotate(1)
+    globalGrid.exportcsv()
 
 
     # movefowardtest(1)
