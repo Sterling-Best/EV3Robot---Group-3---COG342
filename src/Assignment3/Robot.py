@@ -22,14 +22,13 @@ class Robot:
             amplify (int): amount to amplify motors by.
         """
         self.__amplify = amplify
-        self.__usModeStr = 'US-DIST-IN'
         #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
         # Initiate Sensors
         self.ultrasonic = ev3.UltrasonicSensor('in1')
         assert self.ultrasonic.connected
-        self.ultrasonic.mode = self.__usModeStr
+        self.ultrasonic.mode = 'US-DIST-IN'
         # Initiate other Functions
         self.LED = ev3.Leds()
         self.LED.all_off()
@@ -39,7 +38,7 @@ class Robot:
         self.LED.all_off()
         initiatldistace = round(self.ultrasonic.value())
         estimateddistance = initiatldistace - distance
-        rotation = distance * 20
+        rotation = distance * 15
         self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
