@@ -28,7 +28,7 @@ class Ev3CsvExporter:
 
         filestr = self.fileDir + self.datetimefilename() + '.csv'
         coordlist = a_targetglobal.collectcoord()
-        with open(filestr, 'w') as csvfile:
+        with open(filestr, 'wb') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
             filewriter.writerow(["X", "Y", "Detail"])
             for coord in coordlist:
