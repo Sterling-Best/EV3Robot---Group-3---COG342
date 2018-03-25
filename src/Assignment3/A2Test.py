@@ -36,12 +36,12 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
-    for x in range(360):
+    for x in range(36):
         distance = robot.ultrasonic.value()/10
         x = distance * math.sin(robot.get_currentdegrees())
         y = distance * math.cos(robot.get_currentdegrees())
         globalGrid.addcoord(Ev3Coordinates(x,y, "PointofObstruction"))
-        robot.tankrotate(1)
+        robot.tankrotate(10)
     globalGrid.exportcsv()
 
 
