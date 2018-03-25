@@ -36,7 +36,7 @@ def run() -> None:
         None: continously run the robot, and check for button press.
     """
     robot.tankrotate(90)
-    
+
     # movefowardtest(1)
     # movefowardtest(5)
 
