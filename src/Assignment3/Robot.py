@@ -27,7 +27,7 @@ class Robot:
         #Initiate Motors
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
-        self.motorPair = helper.Tank(self.motorLeft, self.motorRight)
+        self.motorPair = helper.Tank('outA', 'outD')
         # Initiate Sensors
         self.ultrasonic = ev3.UltrasonicSensor('in1')
         assert self.ultrasonic.connected
