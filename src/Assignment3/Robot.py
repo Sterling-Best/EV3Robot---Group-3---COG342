@@ -27,7 +27,7 @@ class Robot:
         self.motorLeft = ev3.LargeMotor('outA')
         self.motorRight = ev3.LargeMotor('outD')
         # Initiate Sensors
-        self.ultrasonic = ev3.UltraSonicSensor('in1')
+        self.ultrasonic = ev3.UltrasonicSensor('in1')
         assert self.ultrasonic.connected
         self.ultrasonic.mode = self.__usModeStr
         # Initiate other Functions
