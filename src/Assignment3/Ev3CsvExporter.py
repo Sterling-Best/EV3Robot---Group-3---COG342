@@ -13,7 +13,7 @@ class Ev3CsvExporter:
         """"
         Initialization of Ev3CsvExporter object.
         """
-        self.fileDir = '/EV3Robot---Group-3---COG342/out/csv/'
+        self.fileDir = '../EV3Robot---Group-3---COG342/out/csv/'
 
     def createcsv(self, a_targetglobal) -> None:
         """
