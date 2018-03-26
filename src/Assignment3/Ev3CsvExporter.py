@@ -28,15 +28,15 @@ class Ev3CsvExporter:
 
         filestr = self.fileDir + self.datetimefilename() + '.csv'
         coordlist = a_targetglobal.collectcoord()
-        with open(filestr, 'wb') as csvfile:
+        with open(filestr, 'w') as csvfile:
             filewriter = csv.writer(csvfile, dialect='excel', delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-            filewriter.writerow([1, 2, 3])
+            filewriter.writerow(["X", "Y", "Detail"])
             for coord in coordlist:
                 rowlist = []
                 rowlist.append(coord.get_xcoordinate())
                 rowlist.append(coord.get_ycoordinate())
                 if len(coord.get_propertylist()) == 0:
-                    rowlist.append(0)
+                    rowlist.append("--")
                 else:
                     for detail in coord.get_propertylist():
                             rowlist.append(detail)
