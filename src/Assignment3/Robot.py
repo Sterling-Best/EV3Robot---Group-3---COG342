@@ -62,8 +62,8 @@ class Robot:
 
     def tankrotate(self, degrees: int) -> None:
         rotation = degrees * 2
-        self.motorLeft.run_to_rel_pos(speed_sp=200, position_sp=rotation)
-        self.motorRight.run_to_rel_pos(speed_sp=200, position_sp=-rotation)
+        self.motorLeft.run_to_rel_pos(speed_sp=50, position_sp=rotation)
+        self.motorRight.run_to_rel_pos(speed_sp=50, position_sp=-rotation)
         self.motorLeft.wait_while(self.motorLeft.STATE_RUNNING)
         self.motorRight.wait_while(self.motorRight.STATE_RUNNING)
         self.set_currentdegrees(self.get_currentdegrees() + degrees)
