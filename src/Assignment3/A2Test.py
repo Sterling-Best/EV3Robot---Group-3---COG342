@@ -38,7 +38,8 @@ def run() -> None:
     """
     for x in range(360):
         robot.tankrotate(1)
-        time.sleep(5)
+
+    time.sleep(5)
 
     for x in range(36):
         distance = robot.ultrasonic.value()/10
