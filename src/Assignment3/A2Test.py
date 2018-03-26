@@ -36,6 +36,10 @@ def run() -> None:
     Returns:
         None: continously run the robot, and check for button press.
     """
+    for x in range(360):
+        robot.tankrotate(1)
+        time.sleep(5)
+
     for x in range(36):
         distance = robot.ultrasonic.value()/10
         x = distance * math.sin(robot.get_currentdegrees())
