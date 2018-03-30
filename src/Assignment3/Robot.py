@@ -43,7 +43,6 @@ class Robot:
         self.LED.all_off()
         #LCD
         self.LCD = ev3.Screen()
-        assert self.LCD.connected
         #self.cSensorRight = ev3.ColorSensor('in4')
 
     def get_currentdegrees(self) -> int:
