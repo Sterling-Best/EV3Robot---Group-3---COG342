@@ -1,5 +1,6 @@
 import time
 import math
+from math import pi, radians, sin, cos
 
 from Robot import Robot
 from Ev3Global import Ev3Global
@@ -45,8 +46,9 @@ def run() -> None:
     robot.LCD.update()
     for x in range(36):
         distance = robot.ultrasonic.value()/10 + 2.5
-        x = distance * math.sin(robot.get_currentdegrees())
-        y = distance * math.cos(robot.get_currentdegrees())
+        theta = pi/2 - radians (robot.get_currentdegrees())
+        x = distance * sin(theta)
+        y = distance * cos(theta)
         robot.globalGrid.addcoord(Ev3Coordinates(x,y,"PointOfObstruction"))
         robot.tankrotate(10)
     robot.LCD.clear()
