@@ -45,8 +45,9 @@ def run() -> None:
         distance = robot.ultrasonic.value()/10
         x = distance * math.sin(robot.get_currentdegrees())
         y = distance * math.cos(robot.get_currentdegrees())
-        globalGrid.addcoord(Ev3Coordinates(x,y,"PointOfObstruction"))
+        robot.globalGrid.addcoord(Ev3Coordinates(x,y,"PointOfObstruction"))
         robot.tankrotate(10)
+    robot.lcddrawglobal()
     globalGrid.exportcsv()
 
 

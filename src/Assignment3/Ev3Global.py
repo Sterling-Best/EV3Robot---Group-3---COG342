@@ -136,6 +136,7 @@ class Ev3Global:
                 newlist.append(coord)
         return newlist
 
+
     # TODO: Optional: Modify region size
     # Goes through all regions modifying their borders, and reassigning coordinates
     # This will bye tough

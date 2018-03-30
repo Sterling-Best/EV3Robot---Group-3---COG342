@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import ev3dev.ev3 as ev3
+from Ev3Global import Ev3Global
+from Ev3Coordinates import Ev3Coordinates
 
 class Robot:
     """
@@ -13,6 +15,10 @@ class Robot:
     __usModeStr = ''
 
     __currentDegrees = 0
+
+
+
+    globalGrid = Ev3Global(16)
 
 
     def __init__(self, amplify: int) -> None:
@@ -35,6 +41,9 @@ class Robot:
         # Initiate other Functions
         self.LED = ev3.Leds()
         self.LED.all_off()
+        #LCD
+        self.LCD = ev3.Screen()
+        assert self.LCD.connected
         #self.cSensorRight = ev3.ColorSensor('in4')
 
     def get_currentdegrees(self) -> int:
@@ -145,6 +154,25 @@ class Robot:
             ev3.Button: providing access to the EV3 on board buttons.
         """
         return ev3.Button()
+
+    def xcoordlcdconversion(self, target: int) -> int:
+        return 89 + target
+
+    def ycoordlcdconversion(self, target: int) -> int:
+        return 64 + target
+
+    def lcddrawcoord(self, target: Ev3Coordinates):
+        x = self.xcoordlcdconversion(target.get_xcoordinate())
+        y = self.ycoordlcdconversion(target.get_ycoordinate())
+        if 0 > x or x > 177 or 0 > y or y > 127:
+            return
+        else:
+            self.LCD.draw.point(x,y, fill="black")
+
+    def lcddrawglobal(self) -> None:
+        globallist = self.globalGrid.collectcoord()
+        for coord in globallist:
+            self.lcddrawcoord(coord)
 
     def __str(self) -> str:
         """
