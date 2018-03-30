@@ -166,7 +166,7 @@ class Robot:
         if 0 > x or x > 177 or 0 > y or y > 127:
             return
         else:
-            self.LCD.draw.point(x,y,'black')
+            self.LCD.draw.point((x,y),fill='black')
 
     def lcddrawglobal(self) -> None:
         globallist = self.globalGrid.collectcoord()
