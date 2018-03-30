@@ -46,7 +46,7 @@ def run() -> None:
     robot.LCD.update()
     for x in range(60):
         distance = (robot.ultrasonic.value()/10) + 2.5
-        theta = pi/2 - radians(robot.get_currentdegrees())
+        theta = radians(robot.get_currentdegrees())
         x = distance * sin(theta)
         y = distance * cos(theta)
         robot.globalGrid.addcoord(Ev3Coordinates(x,y,"PointOfObstruction"))
