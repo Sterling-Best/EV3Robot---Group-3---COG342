@@ -41,6 +41,7 @@ def run() -> None:
     #
     # time.sleep(5)
 
+    robot.LCD.clear()
     for x in range(36):
         distance = robot.ultrasonic.value()/10
         x = distance * math.sin(robot.get_currentdegrees())
